@@ -1,0 +1,7 @@
+{
+  "name": "appGeriatrico",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
