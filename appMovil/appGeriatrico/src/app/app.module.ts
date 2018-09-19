@@ -9,6 +9,15 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 
+export const firebaseConfig = {
+  apiKey: "AIzaSyCuz4z9xA3fVthF35qAXCcUtUJ3clhXPww",
+  authDomain: "appgeriatrico.firebaseapp.com",
+  databaseURL: "https://appgeriatrico.firebaseio.com",
+  projectId: "appgeriatrico",
+  storageBucket: "appgeriatrico.appspot.com",
+  messagingSenderId: "590157339784"
+}
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
