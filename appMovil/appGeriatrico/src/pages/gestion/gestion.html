@@ -14,5 +14,121 @@
 
 
 <ion-content padding>
-
+    <div padding>
+        <ion-segment [(ngModel)]="pet">
+          <ion-segment-button value="clientes">
+            Clientes
+          </ion-segment-button>
+          <ion-segment-button value="personal">
+            Personal
+          </ion-segment-button>
+          <ion-segment-button value="inventario">
+            Inventario
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      
+      <div [ngSwitch]="pet">
+        <ion-list *ngSwitchCase="'inventario'">
+            <h1>Inventario Actual</h1>
+            <p>
+                En este segmento podrá encontrar toda la información 
+                al respecto de los inventarios, podrá realizar modificaciones, 
+                eliminar y editar productos.
+            </p>
+            <ion-grid>                
+              <ion-row>
+                <ion-col col-12>                    
+                  <button ion-button icon-start>
+                    <ion-icon name="home"></ion-icon>
+                      Agregar
+                  </button>
+                  <button ion-button icon-end>
+                    <ion-icon name="home"></ion-icon>
+                       Lista
+                  </button>
+                  <button ion-button icon-end>
+                    <ion-icon name="home"></ion-icon>
+                    Otro
+                  </button>
+                </ion-col>                  
+              </ion-row>
+            </ion-grid>
+          <ion-item>              
+            <ion-thumbnail item-start>
+              <img src="img/thumbnail-puppy-1.jpg">
+            </ion-thumbnail>
+            
+          </ion-item>
+          ...
+        </ion-list>
+        <ion-list *ngSwitchCase="'personal'">
+          <h1>Personal Geriatrico</h1>
+          <p>
+              En este segmento podrá encontrar toda la información 
+              al respecto del personal del geriatrico, podrá realizar 
+              modificaciones, eliminar y editar personas.
+          </p>
+          <ion-grid>                
+              <ion-row>
+                <ion-col col-12>                    
+                  <button ion-button icon-start>
+                    <ion-icon name="home"></ion-icon>
+                      Agregar
+                  </button>
+                  <button ion-button icon-end>
+                    <ion-icon name="home"></ion-icon>
+                       Lista
+                  </button>
+                  <button ion-button icon-end>
+                    <ion-icon name="home"></ion-icon>
+                    Otro
+                  </button>
+                </ion-col>                  
+              </ion-row>
+            </ion-grid>
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="img/thumbnail-puppy-1.jpg">
+            </ion-thumbnail>
+            <h2>Ruby</h2>
+          </ion-item>
+          ...
+        </ion-list>
+      
+        <ion-list *ngSwitchCase="'clientes'">
+          <h1>Clientes Geriatrico</h1>
+          <p>
+              En este segmento podrá encontrar toda la información 
+              al respecto de los clientes, podrá realizar modificaciones, 
+              eliminar y editar. Se podrá ver los medicamentos y horarios.
+          </p>
+          <ion-grid>                
+              <ion-row>
+                <ion-col col-12>                    
+                  <button ion-button icon-start>
+                    <ion-icon name="home"></ion-icon>
+                      Agregar
+                  </button>
+                  <button ion-button icon-end>
+                    <ion-icon name="home"></ion-icon>
+                       Lista
+                  </button>
+                  <button ion-button icon-end>
+                    <ion-icon name="home"></ion-icon>
+                    Otro
+                  </button>
+                </ion-col>                  
+              </ion-row>
+            </ion-grid>
+          <ion-item>
+              <ion-label floating>Nombre</ion-label>
+            <ion-thumbnail item-start>
+              <img src="img/thumbnail-kitten-1.jpg">
+            </ion-thumbnail>
+            <h2>Luna</h2>
+          </ion-item>
+          ...
+        </ion-list>
+      </div>
 </ion-content>
