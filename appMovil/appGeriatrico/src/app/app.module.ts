@@ -1,3 +1,7 @@
+import { TabsHomePage } from './../pages/tabs-home/tabs-home';
+import { NotificacionesPage } from './../pages/notificaciones/notificaciones';
+import { GestionPage } from './../pages/gestion/gestion';
+import { CalendarioPage } from './../pages/calendario/calendario';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -24,7 +28,11 @@ import { HomePage } from '../pages/home/home';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    TabsHomePage,
+    CalendarioPage,
+    GestionPage,
+    NotificacionesPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +44,11 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    TabsHomePage,
+    CalendarioPage,
+    GestionPage,
+    NotificacionesPage
   ],
   providers: [
     StatusBar,
