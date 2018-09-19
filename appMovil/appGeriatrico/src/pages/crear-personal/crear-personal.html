@@ -14,5 +14,42 @@
 
 
 <ion-content padding>
+    <ion-list>
+        <ion-item>
+            <ion-thumbnail item-start>
+              <img src="img/thumbnail-puppy-1.jpg">
+            </ion-thumbnail>
+            <h2>FOTO</h2>
+          </ion-item>
+      
+      <ion-item>
+        <ion-label floating>Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="personal.nombre"></ion-input>
+      </ion-item>
 
-</ion-content>
+      <ion-item>
+          <ion-label floating>Appelidos</ion-label>
+          <ion-input type="text" [(ngModel)]="personal.apellidos"></ion-input>
+        </ion-item>
+      
+      <ion-list>
+        <ion-item>
+          <ion-label>Cargo</ion-label>
+          <ion-select [(ngModel)]="personal.genero">
+            <ion-option value="Médico">Médico</ion-option>
+            <ion-option value="Abogado">Abogado</ion-option>          
+            <ion-option value="Enfermera">Enfermera</ion-option>          
+          </ion-select>
+        </ion-item>
+      </ion-list>
+      <ion-item>
+          <ion-label floating>Dirección</ion-label>
+          <ion-input type="text" [(ngModel)]="personal.direccion"></ion-input>
+        </ion-item>
+      <ion-item>
+        <ion-label floating>Descripción</ion-label>
+        <ion-textarea [(ngModel)]="personal.descripcion"></ion-textarea>
+      </ion-item>    
+    </ion-list>
+    <button ion-button full (click)="guardarPersonal()">Guardar Cliente</button>
+  </ion-content>

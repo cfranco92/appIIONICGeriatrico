@@ -1,3 +1,6 @@
+import { PersonalService } from './../services/personal.service';
+import { ListaPersonalPage } from './../pages/lista-personal/lista-personal';
+import { CrearPersonalPage } from './../pages/crear-personal/crear-personal';
 import { CrearClientePage } from './../pages/crear-cliente/crear-cliente';
 import { TabsHomePage } from './../pages/tabs-home/tabs-home';
 import { NotificacionesPage } from './../pages/notificaciones/notificaciones';
@@ -38,8 +41,11 @@ import { ListaClientesPage } from '../pages/lista-clientes/lista-clientes';
     CalendarioPage,
     GestionPage,
     NotificacionesPage,
+    Noti
     CrearClientePage,
-    ListaClientesPage
+    ListaClientesPage,
+    CrearPersonalPage,
+    ListaPersonalPage
   ],
   imports: [
     BrowserModule,
@@ -57,13 +63,16 @@ import { ListaClientesPage } from '../pages/lista-clientes/lista-clientes';
     GestionPage,
     NotificacionesPage,
     CrearClientePage,
-    ListaClientesPage
+    ListaClientesPage,
+    CrearPersonalPage,
+    ListaPersonalPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ClienteService
+    ClienteService,
+    PersonalService
   ]
 })
 export class AppModule {}

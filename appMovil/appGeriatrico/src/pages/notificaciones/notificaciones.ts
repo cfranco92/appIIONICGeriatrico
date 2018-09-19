@@ -1,3 +1,4 @@
+import { PersonalService } from './../../services/personal.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -14,12 +15,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'notificaciones.html',
 })
 export class NotificacionesPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  notificaciones: any = []
+  constructor(public navCtrl: NavController, public navParams: NavParams, public personalService: PersonalService) {
+    this.personalService.getNotificaciones().valueChanges()
+    .subscribe((notificacionesDB) => {
+          this.notificaciones = notificacionesDB;
+        })   
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NotificacionesPage');
   }
 
+  deleteNotificacion(notificacion) {
+    if(confirm('Seguro que desea borrar este personal?')) {
+      this.personalService.deleteCliente(notificacion)
+      .then( ()=> {
+        alert('Personal eliminado correctamente');
+      });
+    }    
+  }
 }

@@ -1,3 +1,5 @@
+
+import { PersonalService } from '../../services/personal.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -14,12 +16,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'crear-personal.html',
 })
 export class CrearPersonalPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  personal: any = {};
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public crearPersonalServices: PersonalService) {
+      this.personal = navParams.get('personal') || {};
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CrearPersonalPage');
+  }
+  guardarPersonal() {
+    if(!this.personal.id) {
+      this.personal.id = Date.now();
+    }    
+    this.crearPersonalServices.createPersonal(this.personal);
+    this.navCtrl.pop();
+    console.log(this.personal);    
   }
 
 }

@@ -1,3 +1,5 @@
+import { ListaPersonalPage } from './../lista-personal/lista-personal';
+import { CrearPersonalPage } from './../crear-personal/crear-personal';
 import { ListaClientesPage } from './../lista-clientes/lista-clientes';
 import { CrearClientePage } from './../crear-cliente/crear-cliente';
 import { Component } from '@angular/core';
@@ -28,6 +30,12 @@ export class GestionPage {
   }
   irAVistaListaClientes() {
     this.navCtrl.push(ListaClientesPage);
+  }
+  irAVistaCrearPersonal() {
+    this.navCtrl.push(CrearPersonalPage);
+  }
+  irAVistaListaPersonal() {
+    this.navCtrl.push(ListaPersonalPage);
   }
   
 }

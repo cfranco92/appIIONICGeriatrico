@@ -26,5 +26,12 @@ export class ListaPersonalPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListaPersonalPage');
   }
-
+  deletePersonal(personal) {
+    if(confirm('Seguro que desea borrar este personal?')) {
+      this.personalService.deletePersonal(personal)
+      .then( ()=> {
+        alert('Personal eliminado correctamente');
+      });
+    }    
+  }
 }

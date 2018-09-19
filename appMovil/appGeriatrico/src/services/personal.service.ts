@@ -10,6 +10,9 @@ export class PersonalService {
     public getPersonal() {
         return this.afDB.list('/personal/');
     }
+    public getNotificaciones() {
+        return this.afDB.list('/notificaciones/');
+    }
     public getPersonalID(id) {
         return this.afDB.object('/personal/' + id);
     }

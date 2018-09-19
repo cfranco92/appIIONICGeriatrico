@@ -14,7 +14,8 @@ export class ClienteService {
         return this.afDB.object('/clientes/' + id);
     }
     public createCliente(lugar) {
-        return this.afDB.database.ref('/clientes/' + lugar.id).set(lugar);
+        // return this.afDB.database.ref('/clientes/' + lugar.id).set(lugar);
+        return this.afDB.database.ref('/notificaciones/123131453342').set({etiqueta: 'Cita',tema: 'Planificación',descripcion: 'Cita especilista doña Barbara.'});
     }
     public editCliente(lugar) {
         return this.afDB.database.ref('/clientes/' + lugar.id).set(lugar);

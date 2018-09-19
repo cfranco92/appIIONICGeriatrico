@@ -27,10 +27,10 @@ export class ListaClientesPage {
     console.log('ionViewDidLoad ListaClientesPage');
   }
   deleteCliente(cliente) {
-    if(confirm('Seguro que desea borrar este lugar?')) {
+    if(confirm('Seguro que desea borrar este cliente?')) {
       this.clienteService.deleteCliente(cliente)
       .then( ()=> {
-        alert('Lugar eliminado correctamente');
+        alert('Cliente eliminado correctamente');
       });
     }    
   }
