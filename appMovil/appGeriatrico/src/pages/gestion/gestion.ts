@@ -1,3 +1,4 @@
+import { ListaClientesPage } from './../lista-clientes/lista-clientes';
 import { CrearClientePage } from './../crear-cliente/crear-cliente';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -25,5 +26,8 @@ export class GestionPage {
   irAVistaCrearCliente() {
     this.navCtrl.push(CrearClientePage);
   }
-
+  irAVistaListaClientes() {
+    this.navCtrl.push(ListaClientesPage);
+  }
+  
 }

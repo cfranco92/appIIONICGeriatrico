@@ -14,6 +14,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
 
+//Servicios
+import { ClienteService } from '../services/clientes.service';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyCuz4z9xA3fVthF35qAXCcUtUJ3clhXPww",
   authDomain: "appgeriatrico.firebaseapp.com",
@@ -25,6 +28,7 @@ export const firebaseConfig = {
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ListaClientesPage } from '../pages/lista-clientes/lista-clientes';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,8 @@ import { HomePage } from '../pages/home/home';
     CalendarioPage,
     GestionPage,
     NotificacionesPage,
-    CrearClientePage
+    CrearClientePage,
+    ListaClientesPage
   ],
   imports: [
     BrowserModule,
@@ -51,12 +56,14 @@ import { HomePage } from '../pages/home/home';
     CalendarioPage,
     GestionPage,
     NotificacionesPage,
-    CrearClientePage
+    CrearClientePage,
+    ListaClientesPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ClienteService
   ]
 })
 export class AppModule {}

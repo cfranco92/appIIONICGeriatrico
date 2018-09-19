@@ -3,7 +3,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-// import { HomePage } from '../pages/home/home';
+// Vistas
 import { TabsHomePage } from './../pages/tabs-home/tabs-home';
 @Component({
   templateUrl: 'app.html'
