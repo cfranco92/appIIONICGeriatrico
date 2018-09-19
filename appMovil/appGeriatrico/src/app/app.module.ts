@@ -1,3 +1,4 @@
+import { CrearClientePage } from './../pages/crear-cliente/crear-cliente';
 import { TabsHomePage } from './../pages/tabs-home/tabs-home';
 import { NotificacionesPage } from './../pages/notificaciones/notificaciones';
 import { GestionPage } from './../pages/gestion/gestion';
@@ -32,7 +33,8 @@ import { HomePage } from '../pages/home/home';
     TabsHomePage,
     CalendarioPage,
     GestionPage,
-    NotificacionesPage
+    NotificacionesPage,
+    CrearClientePage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import { HomePage } from '../pages/home/home';
     TabsHomePage,
     CalendarioPage,
     GestionPage,
-    NotificacionesPage
+    NotificacionesPage,
+    CrearClientePage
   ],
   providers: [
     StatusBar,

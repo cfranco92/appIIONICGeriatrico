@@ -1,9 +1,8 @@
-import { CrearClientePage } from './../crear-cliente/crear-cliente';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the GestionPage page.
+ * Generated class for the CrearClientePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,19 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-gestion',
-  templateUrl: 'gestion.html',
+  selector: 'page-crear-cliente',
+  templateUrl: 'crear-cliente.html',
 })
-export class GestionPage {
+export class CrearClientePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad GestionPage');
-  }
-  irAVistaCrearCliente() {
-    this.navCtrl.push(CrearClientePage);
+    console.log('ionViewDidLoad CrearClientePage');
   }
 
 }
