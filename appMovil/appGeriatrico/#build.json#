@@ -1,0 +1,18 @@
+{
+     "android": {
+         "debug": {
+             "keystore": "appGeriatrico.keystore",
+             "storePassword": "aleJANDRO73**",
+             "alias": ",
+             "password" : "alejANDRO73**",
+             "keystoreType": ""
+         },
+         "release": {
+             "keystore": "appGeriatrico.keystore",
+             "storePassword": "aleJANDRO73**",
+             "alias": "miapp",
+             "password" : "aleJANDRO73**",
+             "keystoreType": ""
+         }
+     }
+ }
