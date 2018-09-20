@@ -26,13 +26,4 @@ export class NotificacionesPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad NotificacionesPage');
   }
-
-  deleteNotificacion(notificacion) {
-    if(confirm('Seguro que desea borrar este personal?')) {
-      this.personalService.deleteCliente(notificacion)
-      .then( ()=> {
-        alert('Personal eliminado correctamente');
-      });
-    }    
-  }
 }
