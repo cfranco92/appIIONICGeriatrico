@@ -1,0 +1,157 @@
+<!--
+  Generated template for the ClienteDetallePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Información Usuario</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+      <h1 text-center>Usuario</h1>      
+      <img src="../../assets/imgs/anciano.jpg"/>   
+      <ion-item>
+        <ion-label floating>Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Apellidos</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.apellidos"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Cédula</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.cedula"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Fecha Nacimiento</ion-label>
+        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="cliente.fechaNacimiento"></ion-datetime>
+      </ion-item>
+      
+    </ion-list>
+    <ion-list>    
+        <h1 text-center>Acudiente</h1>      
+        <ion-item>
+          <ion-label floating>Nombre Acudiente</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.acudiente.nombre"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label floating>Appelidos Acudiente</ion-label>
+            <ion-input type="text" [(ngModel)]="cliente.acudiente.apellidos"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label floating>Cédula Acudiente</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.acudiente.cedula"></ion-input>
+        </ion-item>      
+      </ion-list>
+      <ion-list> 
+        <h1 text-center>Pariente</h1>         
+        <ion-item>
+          <ion-label floating>Nombre Pariente</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.nombre"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+            <ion-label floating>Appelidos Pariente</ion-label>
+            <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.apellidos"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label floating>Cédula Pariente</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.cedula"></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list>        
+    <h1 text-center>Médico Tratante</h1>
+      <ion-item>
+        <ion-label floating>Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.medico.nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Appelidos</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.apellidos"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Celular</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.medico.telefono"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label floating>Otro</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.otro"></ion-input>
+      </ion-item>      
+    </ion-list>
+    <ion-list>        
+        <h1 text-center>Seguros</h1>
+          <ion-item>
+            <ion-label floating>Seguro Asistencia EPS</ion-label>
+            <ion-input type="text" [(ngModel)]="cliente.seguros.seguroSalud"></ion-input>
+          </ion-item>
+    
+          <ion-item>
+              <ion-label floating>Prepagada</ion-label>
+              <ion-input type="text" [(ngModel)]="cliente.seguros.prepagada"></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label floating>Seguros Funerarios</ion-label>
+            <ion-input type="text" [(ngModel)]="cliente.seguros.funerarios"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+              <ion-label floating>Datos Médicos Adicionales</ion-label>
+              <ion-input type="text" [(ngModel)]="cliente.medico.otro"></ion-input>
+          </ion-item>              
+    </ion-list>
+    <ion-list>
+        <h1 text-center>Restricciones</h1>                  
+      
+        <ion-list>
+          <ion-item>
+            <ion-label>Visitas</ion-label>
+            <ion-select [(ngModel)]="cliente.observaciones.visitas">
+              <ion-option value="Si">Si</ion-option>
+              <ion-option value="No">No</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+        <ion-list>
+            <ion-item>
+              <ion-label>Salidas</ion-label>
+              <ion-select [(ngModel)]="cliente.observaciones.salidas">
+                <ion-option value="Si">Si</ion-option>
+                <ion-option value="No">No</ion-option>
+              </ion-select>
+            </ion-item>
+        </ion-list>
+  
+        <ion-item>
+            <ion-label floating>Otro</ion-label>
+            <ion-input type="text" [(ngModel)]="cliente.observaciones.otro"></ion-input>
+        </ion-item>
+        
+    </ion-list>
+  
+    <ion-list>
+        <h1 text-center>Observaciones</h1>                        
+  
+        <ion-item>
+            <ion-label floating>Tener en Cuenta</ion-label>
+            <ion-input type="text" [(ngModel)]="cliente.observaciones.importante"></ion-input>
+        </ion-item>
+        
+    </ion-list>
+</ion-content>

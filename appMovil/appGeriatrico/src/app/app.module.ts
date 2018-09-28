@@ -1,3 +1,4 @@
+import { ClienteDetallePage } from './../pages/cliente-detalle/cliente-detalle';
 import { AcudientePage } from './../pages/acudiente/acudiente';
 import { PersonalService } from './../services/personal.service';
 import { ListaPersonalPage } from './../pages/lista-personal/lista-personal';
@@ -45,6 +46,7 @@ import { RestriccionesPage } from '../pages/restricciones/restricciones';
     GestionPage,
     NotificacionesPage,
     CrearClientePage,
+    ClienteDetallePage,
     AcudientePage,
     DatosMedicosPage,
     RestriccionesPage,
@@ -68,6 +70,7 @@ import { RestriccionesPage } from '../pages/restricciones/restricciones';
     GestionPage,
     NotificacionesPage,
     CrearClientePage,
+    ClienteDetallePage,
     AcudientePage,
     DatosMedicosPage,
     RestriccionesPage,

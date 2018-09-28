@@ -16,12 +16,14 @@
 <ion-content>  
     <ion-list>
     <ion-item-sliding *ngFor="let cliente of clientes">
-      <!-- <ion-item (click)="irAVistaDeDetalleExistente(lugar)"> -->
-      <ion-item>
+      <ion-item (click)="irAVistaDeDetalleExistente(cliente)">          
+        <ion-avatar item-start>
+          <img src="../../assets/imgs/anciano.jpg"/>              
+        </ion-avatar> 
         <h2>{{cliente.nombre}}</h2>
         <h3>{{cliente.apellidos}}</h3>
-        <h3>{{cliente.direccion}}</h3>
-        <p>{{cliente.genero}}</p>
+        <h3>{{cliente.cedula}}</h3>
+        <p>{{cliente.fechaNacimiento}}</p>
       </ion-item>
       <ion-item-options side="left">
         <button ion-button color="primary">
@@ -41,9 +43,5 @@
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
-  
-    <ion-fab bottom right >
-      <!-- <button ion-fab (click)="irAVistaDeDetalle()"><ion-icon name="pin"></ion-icon></button> -->
-      <button ion-fab ><ion-icon name="pin"></ion-icon></button>
-    </ion-fab>
+      
   </ion-content>

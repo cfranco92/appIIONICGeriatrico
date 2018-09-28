@@ -1,3 +1,4 @@
+import { ClienteDetallePage } from './../cliente-detalle/cliente-detalle';
 import { ClienteService } from './../../services/clientes.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -26,11 +27,14 @@ export class ListaClientesPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ListaClientesPage');
   }
+  irAVistaDeDetalleExistente(cliente) {
+    this.navCtrl.push(ClienteDetallePage, {cliente: cliente});
+  }
   deleteCliente(cliente) {
-    if(confirm('Seguro que desea borrar este cliente?')) {
+    if(confirm('¿Seguro que desea borrar este usuario?')) {
       this.clienteService.deleteCliente(cliente)
       .then( ()=> {
-        alert('Cliente eliminado correctamente');
+        alert('Usuario eliminado correctamente');
       });
     }    
   }

@@ -28,8 +28,8 @@ export class RestriccionesPage {
     if(!this.cliente.id) {
       this.cliente.id = Date.now();
     }    
-    this.crearClienteServices.createCliente(this.cliente);
-    this.navCtrl.pop();
+    this.crearClienteServices.createCliente(this.cliente);    
+    this.navCtrl.popToRoot();
     console.log(this.cliente);    
   }
 }

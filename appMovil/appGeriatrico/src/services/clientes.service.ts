@@ -13,14 +13,14 @@ export class ClienteService {
     public getCliente(id) {
         return this.afDB.object('/clientes/' + id);
     }
-    public createCliente(lugar) {
-        // return this.afDB.database.ref('/clientes/' + lugar.id).set(lugar);
-        return this.afDB.database.ref('/notificaciones/123131453342').set({etiqueta: 'Cita',tema: 'Planificación',descripcion: 'Cita especilista doña Barbara.'});
+    public createCliente(cliente) {
+        return this.afDB.database.ref('/clientes/' + cliente.id).set(cliente);
+        // return this.afDB.database.ref('/notificaciones/123131453342').set({etiqueta: 'Cita',tema: 'Planificación',descripcion: 'Cita especilista doña Barbara.'});
     }
-    public editCliente(lugar) {
-        return this.afDB.database.ref('/clientes/' + lugar.id).set(lugar);
+    public editCliente(cliente) {
+        return this.afDB.database.ref('/clientes/' + cliente.id).set(cliente);
     }
-    public deleteCliente(lugar){
-        return this.afDB.database.ref('/clientes/' + lugar.id).remove();
+    public deleteCliente(cliente){
+        return this.afDB.database.ref('/clientes/' + cliente.id).remove();
     }
 }
