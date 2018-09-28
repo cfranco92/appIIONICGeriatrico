@@ -1,0 +1,52 @@
+<!--
+  Generated template for the AcudientePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Acudiente</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>    
+      <h1 text-center>Acudiente</h1>      
+      <ion-item>
+        <ion-label floating>Nombre Acudiente</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.acudiente.nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Appelidos Acudiente</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.acudiente.apellidos"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Cédula Acudiente</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.acudiente.cedula"></ion-input>
+      </ion-item>      
+    </ion-list>
+    <ion-list> 
+      <h1 text-center>Pariente</h1>         
+      <ion-item>
+        <ion-label floating>Nombre Pariente</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Appelidos Pariente</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.apellidos"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Cédula Pariente</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.cedula"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button full (click)="irAVistaDatosMedicos(cliente)">Datos Médicos</button>
+</ion-content>

@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>crearCliente</ion-title>
+    <ion-title>Registro Usuario</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,12 +15,13 @@
 
 <ion-content padding>
     <ion-list>
-        <ion-item>
-            <ion-thumbnail item-start>
-              <img src="img/thumbnail-puppy-1.jpg">
-            </ion-thumbnail>
-            <h2>FOTO</h2>
-          </ion-item>
+      <h1 text-center>Nuevo Usuario</h1>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="img/thumbnail-puppy-1.jpg">
+        </ion-thumbnail>
+        <h2>FOTO</h2>
+      </ion-item>
       
       <ion-item>
         <ion-label floating>Nombre</ion-label>
@@ -30,9 +31,19 @@
       <ion-item>
           <ion-label floating>Appelidos</ion-label>
           <ion-input type="text" [(ngModel)]="cliente.apellidos"></ion-input>
-        </ion-item>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Cédula</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.cedula"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Fecha Nacimiento</ion-label>
+        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="cliente.fechaNacimiento"></ion-datetime>
+      </ion-item>
       
-      <ion-list>
+      <!-- <ion-list>
         <ion-item>
           <ion-label>Género</ion-label>
           <ion-select [(ngModel)]="cliente.genero">
@@ -40,16 +51,10 @@
             <ion-option value="Femenino">Femenino</ion-option>          
           </ion-select>
         </ion-item>
-      </ion-list>
-      <ion-item>
-          <ion-label floating>Dirección</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.direccion"></ion-input>
-        </ion-item>
-      <ion-item>
-        <ion-label floating>Descripción</ion-label>
-        <ion-textarea [(ngModel)]="cliente.descripcion"></ion-textarea>
-      </ion-item>    
+      </ion-list> -->
+      
     </ion-list>
-    <button ion-button full (click)="guardarCliente()">Guardar Cliente</button>
+    <!-- <button ion-button full (click)="guardarCliente()">Guardar Cliente</button> -->
+    <button ion-button full (click)="irAVistaAcudiente(cliente)">Acudiente</button>
   </ion-content>
   

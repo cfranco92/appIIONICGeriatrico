@@ -1,3 +1,4 @@
+import { AcudientePage } from './../pages/acudiente/acudiente';
 import { PersonalService } from './../services/personal.service';
 import { ListaPersonalPage } from './../pages/lista-personal/lista-personal';
 import { CrearPersonalPage } from './../pages/crear-personal/crear-personal';
@@ -32,6 +33,8 @@ export const firebaseConfig = {
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListaClientesPage } from '../pages/lista-clientes/lista-clientes';
+import { DatosMedicosPage } from '../pages/datos-medicos/datos-medicos';
+import { RestriccionesPage } from '../pages/restricciones/restricciones';
 
 @NgModule({
   declarations: [
@@ -42,6 +45,9 @@ import { ListaClientesPage } from '../pages/lista-clientes/lista-clientes';
     GestionPage,
     NotificacionesPage,
     CrearClientePage,
+    AcudientePage,
+    DatosMedicosPage,
+    RestriccionesPage,
     ListaClientesPage,
     CrearPersonalPage,
     ListaPersonalPage
@@ -62,6 +68,9 @@ import { ListaClientesPage } from '../pages/lista-clientes/lista-clientes';
     GestionPage,
     NotificacionesPage,
     CrearClientePage,
+    AcudientePage,
+    DatosMedicosPage,
+    RestriccionesPage,
     ListaClientesPage,
     CrearPersonalPage,
     ListaPersonalPage

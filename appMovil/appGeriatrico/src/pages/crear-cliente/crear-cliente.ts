@@ -1,3 +1,4 @@
+import { AcudientePage } from './../acudiente/acudiente';
 import { ClienteService } from '../../services/clientes.service';
 
 import { Component } from '@angular/core';
@@ -20,7 +21,18 @@ export class CrearClientePage {
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public crearClienteServices: ClienteService) {
       this.cliente = navParams.get('cliente') || {};
+      this.cliente.acudiente= {};
+      this.cliente.parientes={pariente1: {},pariente2: {}}
+      this.cliente.medico = {};
+      this.cliente.seguros = {};
+      this.cliente.observaciones = {}
   }
+
+  // public event = {
+  //   month: '1960-01-01',
+  //   timeStarts: '07:43',
+  //   timeEnds: '1990-02-20'
+  // }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CrearClientePage');
@@ -32,6 +44,10 @@ export class CrearClientePage {
     this.crearClienteServices.createCliente(this.cliente);
     this.navCtrl.pop();
     console.log(this.cliente);    
+  }
+
+  irAVistaAcudiente(cliente){
+    this.navCtrl.push(AcudientePage, {cliente: cliente});
   }
 
 }

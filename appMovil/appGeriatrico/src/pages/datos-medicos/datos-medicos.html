@@ -1,0 +1,63 @@
+<!--
+  Generated template for the DatosMedicosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>datosMedicos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>        
+    <h1 text-center>Médico Tratante</h1>
+      <ion-item>
+        <ion-label floating>Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.medico.nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Appelidos</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.apellidos"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Celular</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.medico.telefono"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label floating>Otro</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.otro"></ion-input>
+      </ion-item>      
+    </ion-list>
+    <ion-list>        
+        <h1 text-center>Seguros</h1>
+          <ion-item>
+            <ion-label floating>Seguro Asistencia EPS</ion-label>
+            <ion-input type="text" [(ngModel)]="cliente.seguros.seguroSalud"></ion-input>
+          </ion-item>
+    
+          <ion-item>
+              <ion-label floating>Prepagada</ion-label>
+              <ion-input type="text" [(ngModel)]="cliente.seguros.prepagada"></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label floating>Seguros Funerarios</ion-label>
+            <ion-input type="text" [(ngModel)]="cliente.seguros.funerarios"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+              <ion-label floating>Datos Médicos Adicionales</ion-label>
+              <ion-input type="text" [(ngModel)]="cliente.medico.otro"></ion-input>
+          </ion-item>              
+        </ion-list>
+    <!-- <button ion-button full (click)="guardarCliente()">Guardar Cliente</button> -->
+    <button ion-button full (click)="irAVistaRestricciones(cliente)">Observaciones y Restricciones</button>
+</ion-content>
