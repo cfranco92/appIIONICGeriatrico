@@ -21,6 +21,7 @@ import { AngularFireModule } from 'angularfire2';
 
 //Servicios
 import { ClienteService } from '../services/clientes.service';
+import { Camera } from '@ionic-native/camera';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCuz4z9xA3fVthF35qAXCcUtUJ3clhXPww",
@@ -83,7 +84,8 @@ import { RestriccionesPage } from '../pages/restricciones/restricciones';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ClienteService,
-    PersonalService
+    PersonalService,
+    Camera
   ]
 })
 export class AppModule {}
