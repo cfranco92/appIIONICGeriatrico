@@ -18,10 +18,11 @@
       <h1 text-center>Nuevo Usuario</h1>
       <ion-item>
         <ion-thumbnail item-start>
-          <img src="img/thumbnail-puppy-1.jpg">
+          <!-- <img src="img/thumbnail-puppy-1.jpg"> -->
+          <img src="{{cliente.foto}}">
         </ion-thumbnail>
         <h2>FOTO</h2>
-        <button ion-button full (click)="takePhoto()">Tomar Foto</button>
+        <button ion-button full (click)="uploadHandler()">Tomar Foto</button>
       </ion-item>
       
       <ion-item>

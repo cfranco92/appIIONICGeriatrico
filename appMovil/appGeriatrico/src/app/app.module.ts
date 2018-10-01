@@ -17,6 +17,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 // Imports Firebase auth, DatabaseModule, Module
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireModule } from 'angularfire2';
 
 //Servicios
@@ -60,6 +61,7 @@ import { RestriccionesPage } from '../pages/restricciones/restricciones';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
+    AngularFireStorageModule,
     AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
