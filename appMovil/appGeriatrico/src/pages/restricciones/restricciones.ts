@@ -24,10 +24,7 @@ export class RestriccionesPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RestriccionesPage');
   }
-  guardarClienteVolverHome() {
-    if(!this.cliente.id) {
-      this.cliente.id = Date.now();
-    }    
+  guardarClienteVolverHome() {       
     this.crearClienteServices.createCliente(this.cliente);    
     this.navCtrl.popToRoot();
     console.log(this.cliente);    

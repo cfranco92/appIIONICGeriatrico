@@ -31,6 +31,9 @@ export class CrearClientePage {
   url: Observable<string>;
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private storage: AngularFireStorage) {
       this.cliente = navParams.get('cliente') || {};
+      if(!this.cliente.id) {
+        this.cliente.id = Date.now();
+      } 
       this.cliente.acudiente= {};
       this.cliente.parientes={pariente1: {},pariente2: {}}
       this.cliente.medico = {};
@@ -50,16 +53,8 @@ export class CrearClientePage {
     return await this.camera.getPicture(options)
   }
 
-  // createUploadTask(file: string): void {
-  //   const filePath = `usuarios/usuario_${ new Date().getTime() }.jpg`;
-  //   this.image = 'data:image/jpg;base64,' + file;
-  //   this.task = this.storage.ref(filePath).putString(this.image, 'data_url');
-
-  //   this.progress = this.task.percentageChanges();
-  // }
-
-  createUploadTask(file: string) {
-    const filePath = `usuarios/usuario_${ new Date().getTime() }.jpg`;
+  createUploadTask(file: string, path: string): void {
+    const filePath = `${path}`;
     this.ref = this.storage.ref(filePath);
     this.image = 'data:image/jpg;base64,' + file;
     alert("Cargando foto en la base de datos");
@@ -69,16 +64,30 @@ export class CrearClientePage {
         this.cliente.foto = this.downloadURL;
         alert("Foto cargada con éxito en la base de datos")
       })
-    });
-    // this.uploadProgress = this.task.percentageChanges();   
-     
+    }); 
   }
 
   async uploadHandler() {
    const base64 = await this.takePhoto();
-   this.createUploadTask(base64);   
+   const pathFotoUsuario: string = `usuarios/${this.cliente.id}/fotoUsuario.jpg`;
+   this.createUploadTask(base64, pathFotoUsuario);   
   }
-  
+  async uploadHandlerDocumentoIdentidad() {
+    const base64 = await this.takePhoto();
+    const pathDocumentoUsuario: string = `usuarios/${this.cliente.id}/fotoDocumentoUsuario.jpg`;
+    this.createUploadTask(base64, pathDocumentoUsuario);   
+  }
+
+  obtenerEdad(): void {
+    const today: Date = new Date();
+    const birthDate: Date = new Date(this.cliente.fechaNacimiento);
+    let age: number = today.getFullYear() - birthDate.getFullYear();
+    const month: number = today.getMonth() - birthDate.getMonth();
+    if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    this.cliente.edad = age;
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CrearClientePage');

@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Registro Usuario</ion-title>
+    <ion-title>Registro Paciente</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,46 +15,70 @@
 
 <ion-content padding>
     <ion-list>
-      <h1 text-center>Nuevo Usuario</h1>
+      <h1 text-center>Nuevo Paciente</h1>
+      <!-- Foto Paciente -->
+      <ion-item>
+        <ion-thumbnail item-start>          
+          <img src="{{cliente.foto}}">
+        </ion-thumbnail>
+        <h2>FOTO PACIENTE</h2>
+        <button ion-button full (click)="uploadHandler()">Tomar Foto</button>
+      </ion-item>
+      <!-- Nombre 1 -->
+      <ion-item>
+        <ion-label floating>Nombre 1</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.nombre1"></ion-input>
+      </ion-item>
+      <!-- Nombre 2 -->
+      <ion-item>
+        <ion-label floating>Nombre 2</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.nombre2"></ion-input>
+      </ion-item>
+      <!-- Apellido 1 -->
+      <ion-item>
+          <ion-label floating>Apellido 1</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.apellido1"></ion-input>
+      </ion-item>
+      <!-- Apellido 2 -->
+      <ion-item>
+        <ion-label floating>Apellido 2</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.apellido2"></ion-input>
+      </ion-item>           
+    </ion-list>
+    <ion-list>
+      <h2 text-center>Identificación y Edad</h2>
+      <!-- Tipo de documento       -->      
+      <ion-item>
+        <ion-label>Tipo de Documento</ion-label>
+        <ion-select [(ngModel)]="cliente.observaciones.visitas">
+          <ion-option value="C.C.">C.C.</ion-option>
+          <ion-option value="Pasaporte">Pasaporte</ion-option>
+          <ion-option value="Ced.Ext.">Ced.Ext.</ion-option>
+          <ion-option value="No documento">No documento</ion-option>
+        </ion-select>
+      </ion-item>
+      <!-- Documento de identidad -->
+      <ion-item>
+        <ion-label floating>Documento Identidad</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.documentoIdentidad"></ion-input>
+      </ion-item>
+      <!-- Foto documento de identidad -->
       <ion-item>
         <ion-thumbnail item-start>
           <!-- <img src="img/thumbnail-puppy-1.jpg"> -->
-          <img src="{{cliente.foto}}">
+          <img src="{{cliente.fotoDocumentoIdentidad}}">
         </ion-thumbnail>
-        <h2>FOTO</h2>
-        <button ion-button full (click)="uploadHandler()">Tomar Foto</button>
+        <h2>FOTO DOCUMENTO DE IDENTIDAD</h2>
+        <button ion-button full (click)="uploadHandlerDocumentoIdentidad()">Tomar Foto</button>
       </ion-item>
-      
-      <ion-item>
-        <ion-label floating>Nombre</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.nombre"></ion-input>
-      </ion-item>
-
-      <ion-item>
-          <ion-label floating>Apellidos</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.apellidos"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label floating>Cédula</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.cedula"></ion-input>
-      </ion-item>
-
       <ion-item>
         <ion-label>Fecha Nacimiento</ion-label>
-        <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="cliente.fechaNacimiento"></ion-datetime>
-      </ion-item>
-      
-      <!-- <ion-list>
-        <ion-item>
-          <ion-label>Género</ion-label>
-          <ion-select [(ngModel)]="cliente.genero">
-            <ion-option value="Masculino">Masculino</ion-option>
-            <ion-option value="Femenino">Femenino</ion-option>          
-          </ion-select>
+        <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="cliente.fechaNacimiento" (ionChange)="obtenerEdad()"></ion-datetime>
+      </ion-item> 
+      <ion-item>
+          <ion-label floating>Edad</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.edad"></ion-input>
         </ion-item>
-      </ion-list> -->
-      
     </ion-list>
     <!-- <button ion-button full (click)="guardarCliente()">Guardar Cliente</button> -->
     <button ion-button full (click)="irAVistaAcudiente(cliente)">Acudiente</button>
