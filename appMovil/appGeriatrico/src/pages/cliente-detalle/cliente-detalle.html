@@ -15,9 +15,9 @@
 
 <ion-content padding>
 <ion-list>
-      <h1 text-center>Usuario</h1>      
-      <img src="../../assets/imgs/anciano.jpg"/>   
-      <ion-item>
+      <h1 text-center>{{cliente.nombre+' '+cliente.apellidos}}</h1>      
+      <img src="{{cliente.foto}}"/>   
+      <!-- <ion-item>
         <ion-label floating>Nombre</ion-label>
         <ion-input type="text" [(ngModel)]="cliente.nombre"></ion-input>
       </ion-item>
@@ -25,7 +25,7 @@
       <ion-item>
           <ion-label floating>Apellidos</ion-label>
           <ion-input type="text" [(ngModel)]="cliente.apellidos"></ion-input>
-      </ion-item>
+      </ion-item> -->
 
       <ion-item>
         <ion-label floating>Cédula</ion-label>
