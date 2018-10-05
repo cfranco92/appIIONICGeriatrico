@@ -58,9 +58,22 @@ export class CrearClientePage {
     alert("Cargando foto en la base de datos");
     const task = this.ref.putString(this.image, 'data_url').then(() => {      
       this.ref.getDownloadURL().subscribe(url => {                
-        // clienteLocal = this.downloadURL;
-        alert("Foto cargada con éxito en la base de datos")
-        return this.downloadURL = url;
+        this.downloadURL = url;
+        this.cliente.foto = this.downloadURL;
+        alert("Foto cargada con éxito en la base de datos")        
+      })
+    }); 
+  }
+  createUploadTask2(file: string, path: string) {
+    const filePath = `${path}`;
+    this.ref = this.storage.ref(filePath);
+    this.image = 'data:image/jpg;base64,' + file;
+    alert("Cargando foto en la base de datos");
+    const task = this.ref.putString(this.image, 'data_url').then(() => {      
+      this.ref.getDownloadURL().subscribe(url => {                                
+        this.downloadURL = url;
+        this.cliente.fotoDocumentoIdentidad = this.downloadURL;
+        alert("Foto cargada con éxito en la base de datos");
       })
     }); 
   }
@@ -68,14 +81,12 @@ export class CrearClientePage {
   async uploadHandler() {
    const base64 = await this.takePhoto();
    const pathFotoUsuario: string = `usuarios/${this.cliente.id}/fotoUsuario.jpg`;
-   const urlFinal = await this.createUploadTask(base64, pathFotoUsuario);   
-   this.cliente.foto = urlFinal;
+   this.createUploadTask(base64, pathFotoUsuario);      
   }
   async uploadHandlerDocumentoIdentidad() {
     const base64 = await this.takePhoto();
     const pathDocumentoUsuario: string = `usuarios/${this.cliente.id}/fotoDocumentoUsuario.jpg`;
-    const urlFinal = await this.createUploadTask(base64, pathDocumentoUsuario);   
-    this.cliente.fotoDocumentoIdentidad = urlFinal;
+    this.createUploadTask2(base64, pathDocumentoUsuario);    
   }
 
   obtenerEdad(): void {
