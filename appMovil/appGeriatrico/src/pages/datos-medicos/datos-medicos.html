@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>datosMedicos</ion-title>
+    <ion-title>Datos Médicos y Seguros</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,47 +16,141 @@
 <ion-content padding>
   <ion-list>        
     <h1 text-center>Médico Tratante</h1>
+    <!-- Nombre 1 -->
       <ion-item>
-        <ion-label floating>Nombre</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.nombre"></ion-input>
+        <ion-label floating>Nombre 1 Médico</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.medico.nombre1"></ion-input>
       </ion-item>
-
+      <!-- Nombre 2 -->
       <ion-item>
-          <ion-label floating>Apellidos</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.apellidos"></ion-input>
+          <ion-label floating>Nombre 2 Médico</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.nombre2"></ion-input>
       </ion-item>
-
+      <!-- Apellido 1 -->
       <ion-item>
-        <ion-label floating>Celular</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.telefono"></ion-input>
+          <ion-label floating>Apellido 1</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.apellido1"></ion-input>
       </ion-item>
-      
+      <!-- Apellido 2 -->
       <ion-item>
-          <ion-label floating>Otro</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.otro"></ion-input>
-      </ion-item>      
+          <ion-label floating>Apellido 2</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.apellido2"></ion-input>
+      </ion-item>
+      <!-- Especialidad -->
+      <ion-item>
+        <ion-label floating>Especialidad</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.medico.especialidad"></ion-input>
+      </ion-item>
+      <!-- Tel 1 -->
+      <ion-item>
+        <ion-label floating>Teléfono 1</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.medico.tel1"></ion-input>
+      </ion-item>
+      <!-- Tel 2 -->
+      <ion-item>
+        <ion-label floating>Teléfono 2</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.medico.tel2"></ion-input>
+      </ion-item>
+      <!-- Email -->
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.medico.email"></ion-input>
+      </ion-item>
+      <!-- Direccion consultorio -->
+      <ion-item>
+        <ion-label floating>Dirección Consultorio</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.medico.direccionConsultorio"></ion-input>
+      </ion-item>          
     </ion-list>
     <ion-list>        
         <h1 text-center>Seguros</h1>
-          <ion-item>
-            <ion-label floating>Seguro Asistencia EPS</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.seguros.seguroSalud"></ion-input>
-          </ion-item>
-    
-          <ion-item>
-              <ion-label floating>Prepagada</ion-label>
-              <ion-input type="text" [(ngModel)]="cliente.seguros.prepagada"></ion-input>
-          </ion-item>
-    
-          <ion-item>
-            <ion-label floating>Seguros Funerarios</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.seguros.funerarios"></ion-input>
-          </ion-item>
-          
-          <ion-item>
-              <ion-label floating>Datos Médicos Adicionales</ion-label>
-              <ion-input type="text" [(ngModel)]="cliente.medico.otro"></ion-input>
-          </ion-item>              
+        <!-- EPS -->
+        <ion-item>
+          <ion-label>EPS</ion-label>
+          <ion-select [(ngModel)]="cliente.seguros.eps">
+              <ion-option value="Nueva EPS">Nueva EPS</ion-option>
+              <ion-option value="Salud Total">Salud Total</ion-option>
+              <ion-option value="Coomeva">Coomeva</ion-option>
+              <ion-option value="Sura">Sura</ion-option>
+              <ion-option value="Aliansalud">Aliansalud</ion-option>
+              <ion-option value="Sanitas">Sanitas</ion-option>
+              <ion-option value="Compensar">Compensar</ion-option>
+              <ion-option value="SER. OCC DE SALUD SOS">Ser. Occ de Salud SOS</ion-option>
+              <ion-option value="Comfenalco Valle">Confenalco Valle</ion-option>
+              <ion-option value="Salud Vida">Salud Vida</ion-option>
+              <ion-option value="Cruz Blanca">Cruz Blanca</ion-option>
+              <ion-option value="Café Salud">Café Salud</ion-option>
+            </ion-select>
+        </ion-item>
+        <!-- Prepagada -->
+        <ion-item>
+          <ion-label>Prepagada</ion-label>
+          <ion-select [(ngModel)]="cliente.seguros.prepagada">
+            <ion-option value="MedPlus">MedPlus</ion-option>
+            <ion-option value="MediSanitas">MediSanitas</ion-option>
+            <ion-option value="Coomeva">Coomeva</ion-option>
+            <ion-option value="Colmédica">Colmédica</ion-option>
+            <ion-option value="Sura">Sura</ion-option>
+            <ion-option value="Mapfre">Mapfre</ion-option>
+            <ion-option value="MedPlus">MedPlus</ion-option>
+            <ion-option value="Seguros Bolivar">Seguros Bolivar</ion-option>
+            <ion-option value="Liberty Seguros">Liberty Seguros</ion-option>
+          </ion-select>          
+        </ion-item>         
+        <!-- Seguros funerarios -->
+        <ion-item>
+          <ion-label>Seguros Funerarios</ion-label>
+          <ion-select [(ngModel)]="cliente.seguros.funerarios">
+            <ion-option value="San Vicente">San Vicente</ion-option>
+            <ion-option value="San Roque">San Roque</ion-option>
+            <ion-option value="Campos de Paz">Campos de Paz</ion-option>
+            <ion-option value="La Esperanza">La Esperanza</ion-option>
+            <ion-option value="Cristo Rey">Cristo Rey</ion-option>
+            <ion-option value="Monte Sacro">Monte Sacro</ion-option>
+          </ion-select>
+        </ion-item>
+        <!-- Telefono Funeraria -->
+        <ion-item>
+          <ion-label floating>Teléfono de Funeraria</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.seguros.funerariaTel"></ion-input>
+        </ion-item>
+        <!-- Asistencia medica -->
+        <ion-item>
+          <ion-label>Asistencia Médica</ion-label>
+          <ion-select [(ngModel)]="cliente.seguros.asistenciaMedica">
+            <ion-option value="EMI">EMI</ion-option>
+            <ion-option value="Emermédica">Emermédica</ion-option>
+          </ion-select>
+        </ion-item>
+        <!-- Foto Carnet Asistencia Medica-->
+        <ion-item>
+          <ion-thumbnail item-start>          
+            <img src="{{cliente.seguros.fotoCarnetAsistenciaMedica}}">
+          </ion-thumbnail>
+          <h2>FOTO CARNET</h2>
+          <button ion-button full (click)="uploadHandler()">Tomar Foto</button>
+        </ion-item>                      
+        </ion-list>
+        <ion-list>
+          <h1 text-center>Restricciones</h1>                            
+          <ion-list>
+            <ion-item>
+              <ion-label>Visitas</ion-label>
+              <ion-select [(ngModel)]="cliente.observaciones.visitas">
+                <ion-option value="Si">Si</ion-option>
+                <ion-option value="No">No</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+          <ion-list>
+              <ion-item>
+                <ion-label>Salidas</ion-label>
+                <ion-select [(ngModel)]="cliente.observaciones.salidas">
+                  <ion-option value="Si">Si</ion-option>
+                  <ion-option value="No">No</ion-option>
+                </ion-select>
+              </ion-item>
+          </ion-list>                  
         </ion-list>
     <!-- <button ion-button full (click)="guardarCliente()">Guardar Cliente</button> -->
     <button ion-button full (click)="irAVistaRestricciones(cliente)">Observaciones y Restricciones</button>

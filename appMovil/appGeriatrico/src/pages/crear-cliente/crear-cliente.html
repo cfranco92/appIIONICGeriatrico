@@ -44,13 +44,31 @@
         <ion-label floating>Apellido 2</ion-label>
         <ion-input type="text" [(ngModel)]="cliente.apellido2"></ion-input>
       </ion-item>           
+      <!-- Estado civil -->
+      <ion-item>
+        <ion-label>Estado Civil</ion-label>
+        <ion-select [(ngModel)]="cliente.estadoCivil">
+          <ion-option value="Soltero/a.">Soltero/a</ion-option>          
+          <ion-option value="Casado/a">Casado/a</ion-option>
+          <ion-option value="Divorciado/a">Divorciado/a</ion-option>
+          <ion-option value="Viudo/a">Viudo/a</ion-option>
+        </ion-select>
+      </ion-item>
+      <!-- Genero -->
+      <ion-item>
+        <ion-label>Género</ion-label>
+        <ion-select [(ngModel)]="cliente.genero">
+          <ion-option value="Masculino">Masculino</ion-option>          
+          <ion-option value="Femenino">Femenino</ion-option>          
+        </ion-select>
+      </ion-item>
     </ion-list>
     <ion-list>
       <h2 text-center>Identificación y Edad</h2>
       <!-- Tipo de documento       -->      
       <ion-item>
         <ion-label>Tipo de Documento</ion-label>
-        <ion-select [(ngModel)]="cliente.observaciones.visitas">
+        <ion-select [(ngModel)]="cliente.tipoDocumentoIdentidad">
           <ion-option value="C.C.">C.C.</ion-option>
           <ion-option value="Pasaporte">Pasaporte</ion-option>
           <ion-option value="Ced.Ext.">Ced.Ext.</ion-option>
@@ -71,10 +89,12 @@
         <h2>FOTO DOCUMENTO DE IDENTIDAD</h2>
         <button ion-button full (click)="uploadHandlerDocumentoIdentidad()">Tomar Foto</button>
       </ion-item>
+      <!-- Fecha de nacimiento -->
       <ion-item>
         <ion-label>Fecha Nacimiento</ion-label>
         <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="cliente.fechaNacimiento" (ionChange)="obtenerEdad()"></ion-datetime>
       </ion-item> 
+      <!-- Edad calculada  -->
       <ion-item>
           <ion-label floating>Edad</ion-label>
           <ion-input type="text" [(ngModel)]="cliente.edad"></ion-input>

@@ -1,7 +1,6 @@
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { AngularFireStorage, AngularFireUploadTask, AngularFireStorageReference } from 'angularfire2/storage';
 import { Observable } from 'rxjs/Observable';
-import { finalize } from 'rxjs/operators';
 import { AcudientePage } from './../acudiente/acudiente';
 
 import { Component } from '@angular/core';
@@ -20,25 +19,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'crear-cliente.html',
 })
 export class CrearClientePage {
-  cliente: any = {};  
-  ref: AngularFireStorageReference;
-  task: AngularFireUploadTask;
+  cliente: any = {
+    acudientes: { acudientePrincipal: {}, acudienteSecundario:{}},
+    parientes: { pariente1: {},pariente2:{}},
+    medico: {},
+    seguros: {},
+    observaciones: {}
+  };  
+  ref: AngularFireStorageReference;  
   uploadProgress: Observable<number>;
   downloadURL: Observable<string>;
 
   progress: any;  // Observable 0 to 100
   image: string; // base64
   url: Observable<string>;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private storage: AngularFireStorage) {
-      this.cliente = navParams.get('cliente') || {};
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private storage: AngularFireStorage) {      
       if(!this.cliente.id) {
         this.cliente.id = Date.now();
-      } 
-      this.cliente.acudiente= {};
-      this.cliente.parientes={pariente1: {},pariente2: {}}
-      this.cliente.medico = {};
-      this.cliente.seguros = {};
-      this.cliente.observaciones = {};             
+      }              
   }
 
   async takePhoto() {
@@ -53,16 +51,16 @@ export class CrearClientePage {
     return await this.camera.getPicture(options)
   }
 
-  createUploadTask(file: string, path: string): void {
+  createUploadTask(file: string, path: string) {
     const filePath = `${path}`;
     this.ref = this.storage.ref(filePath);
     this.image = 'data:image/jpg;base64,' + file;
     alert("Cargando foto en la base de datos");
     const task = this.ref.putString(this.image, 'data_url').then(() => {      
-      this.ref.getDownloadURL().subscribe(url => {        
-        this.downloadURL = url;
-        this.cliente.foto = this.downloadURL;
+      this.ref.getDownloadURL().subscribe(url => {                
+        // clienteLocal = this.downloadURL;
         alert("Foto cargada con éxito en la base de datos")
+        return this.downloadURL = url;
       })
     }); 
   }
@@ -70,12 +68,14 @@ export class CrearClientePage {
   async uploadHandler() {
    const base64 = await this.takePhoto();
    const pathFotoUsuario: string = `usuarios/${this.cliente.id}/fotoUsuario.jpg`;
-   this.createUploadTask(base64, pathFotoUsuario);   
+   const urlFinal = await this.createUploadTask(base64, pathFotoUsuario);   
+   this.cliente.foto = urlFinal;
   }
   async uploadHandlerDocumentoIdentidad() {
     const base64 = await this.takePhoto();
     const pathDocumentoUsuario: string = `usuarios/${this.cliente.id}/fotoDocumentoUsuario.jpg`;
-    this.createUploadTask(base64, pathDocumentoUsuario);   
+    const urlFinal = await this.createUploadTask(base64, pathDocumentoUsuario);   
+    this.cliente.fotoDocumentoIdentidad = urlFinal;
   }
 
   obtenerEdad(): void {

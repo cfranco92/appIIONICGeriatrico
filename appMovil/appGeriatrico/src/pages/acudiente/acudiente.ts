@@ -26,4 +26,9 @@ export class AcudientePage {
   irAVistaDatosMedicos(cliente) {
     this.navCtrl.push(DatosMedicosPage, {cliente: cliente});
   }
+  crearFamiliar(nombre1: string, nombre2: string, apellido1: string, 
+    apellido2: string, parentesco: string, tel1: number, 
+    tel2: number, email: string): any{
+      
+  }
 }

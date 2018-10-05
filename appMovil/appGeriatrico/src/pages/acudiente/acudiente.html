@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Acudiente</ion-title>
+    <ion-title>Acudientes y Familiares</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,37 +15,131 @@
 
 <ion-content padding>
   <ion-list>    
-      <h1 text-center>Acudiente</h1>      
+      <h1 text-center>Acudiente Principal</h1>
+      <!-- Nombre 1 acudiente       -->
       <ion-item>
-        <ion-label floating>Nombre Acudiente</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.acudiente.nombre"></ion-input>
+        <ion-label floating>Nombre 1 Acudiente</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.nombre1"></ion-input>
       </ion-item>
-
+      <!-- Nombre 2 acudiente -->
       <ion-item>
-          <ion-label floating>Appelidos Acudiente</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.acudiente.apellidos"></ion-input>
+          <ion-label floating>Nombre 2 Acudiente</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.nombre2"></ion-input>
       </ion-item>
-
+      <!-- Apellido 1 -->
+      <ion-item>
+          <ion-label floating>Appelido 1 Acudiente</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.apellido1"></ion-input>
+      </ion-item>
+      <!-- Apellido 2 -->
+      <ion-item>
+          <ion-label floating>Appelido 2 Acudiente</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.apellido2"></ion-input>
+      </ion-item>      
+      <!-- Cedula -->
       <ion-item>
         <ion-label floating>Cédula Acudiente</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.acudiente.cedula"></ion-input>
-      </ion-item>      
+        <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.cedula"></ion-input>
+      </ion-item>  
+      <!-- Parentesco -->
+      <ion-item>
+        <ion-label>Parentesco</ion-label>
+        <ion-select [(ngModel)]="cliente.acudientes.acudientePrincipal.parentesco">
+          <ion-option value="Amigo/a.">Amigo/a</ion-option>          
+          <ion-option value="Hermano/a">Hermano/a</ion-option>
+          <ion-option value="Tio/a">Tio/a</ion-option>
+          <ion-option value="Abuelo/a">Abuelo/a</ion-option>
+          <ion-option value="Primo/a">Primo/a</ion-option>
+        </ion-select>
+      </ion-item>    
     </ion-list>
+    <ion-list>    
+      <h1 text-center>Acudiente Secundario</h1>
+      <!-- Nombre 1 acudiente       -->
+      <ion-item>
+        <ion-label floating>Nombre 1 Acudiente Secundario</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.nombre1"></ion-input>
+      </ion-item>
+      <!-- Nombre 2 acudiente -->
+      <ion-item>
+          <ion-label floating>Nombre 2 Acudiente Secundario</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.nombre2"></ion-input>
+      </ion-item>
+      <!-- Apellido 1 -->
+      <ion-item>
+          <ion-label floating>Appelido 1 Acudiente Secundario</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.apellido1"></ion-input>
+      </ion-item>
+      <!-- Apellido 2 -->
+      <ion-item>
+          <ion-label floating>Appelido 2 Acudiente Secundario</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.apellido2"></ion-input>
+      </ion-item>
+      <!-- Cedula -->
+      <ion-item>
+        <ion-label floating>Cédula Acudiente Secundario</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.cedula"></ion-input>
+      </ion-item>    
+      <!-- Parentesco -->
+      <ion-item>
+        <ion-label>Parentesco</ion-label>
+        <ion-select [(ngModel)]="cliente.acudientes.acudienteSecundario.parentesco">
+          <ion-option value="Amigo/a.">Amigo/a</ion-option>          
+          <ion-option value="Hermano/a">Hermano/a</ion-option>
+          <ion-option value="Tio/a">Tio/a</ion-option>
+          <ion-option value="Abuelo/a">Abuelo/a</ion-option>
+          <ion-option value="Primo/a">Primo/a</ion-option>
+        </ion-select>
+      </ion-item>  
+    </ion-list>
+    <!-- Parientes -->
     <ion-list> 
-      <h1 text-center>Pariente</h1>         
+      <h1 text-center>Parientes</h1>         
+      <!-- Nombre 1 -->
       <ion-item>
-        <ion-label floating>Nombre Pariente</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.nombre"></ion-input>
+        <ion-label floating>Nombre 1 Pariente</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.nombre1"></ion-input>
       </ion-item>
-
+      <!-- Nombre 2 -->
       <ion-item>
-          <ion-label floating>Appelidos Pariente</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.apellidos"></ion-input>
+        <ion-label floating>Nombre 2 Pariente</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.nombre2"></ion-input>
       </ion-item>
-
+      <!-- Apellido1 -->
+      <ion-item>
+          <ion-label floating>Appelido 1 Pariente</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.apellido1"></ion-input>
+      </ion-item>
+      <!-- Cedula -->
       <ion-item>
         <ion-label floating>Cédula Pariente</ion-label>
         <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.cedula"></ion-input>
+      </ion-item>
+      <!-- Tel 1 -->
+      <ion-item>
+        <ion-label floating>Teléfono 1</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.tel1"></ion-input>
+      </ion-item>
+      <!-- Tel 2 -->
+      <ion-item>
+        <ion-label floating>Teléfono 2</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.tel2"></ion-input>
+      </ion-item>
+      <!-- Email -->
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.email"></ion-input>
+      </ion-item>
+      <!-- Parentesco -->
+      <ion-item>
+        <ion-label>Parentesco</ion-label>
+        <ion-select [(ngModel)]="cliente.parientes.pariente1.parentesco">
+          <ion-option value="Amigo/a.">Amigo/a</ion-option>          
+          <ion-option value="Hermano/a">Hermano/a</ion-option>
+          <ion-option value="Tio/a">Tio/a</ion-option>
+          <ion-option value="Abuelo/a">Abuelo/a</ion-option>
+          <ion-option value="Primo/a">Primo/a</ion-option>
+        </ion-select>
       </ion-item>
     </ion-list>
     <button ion-button full (click)="irAVistaDatosMedicos(cliente)">Datos Médicos</button>
