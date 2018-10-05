@@ -1,7 +1,7 @@
+import { AntecedentesUsuarioPage } from './../antecedentes-usuario/antecedentes-usuario';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireStorage, AngularFireStorageReference } from 'angularfire2/storage';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { RestriccionesPage } from './../restricciones/restricciones';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -24,6 +24,7 @@ export class DatosMedicosPage {
   image: string; // base64
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private storage: AngularFireStorage) {      
     this.cliente = navParams.get('cliente');
+    console.log(this.cliente);
   }
   async uploadHandler() {
     const base64 = await this.takePhoto();
@@ -56,7 +57,10 @@ export class DatosMedicosPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad DatosMedicosPage');
   }
-  irAVistaRestricciones(cliente) {
-    this.navCtrl.push(RestriccionesPage, {cliente: cliente});
+  // irAVistaRestricciones(cliente) {
+  //   this.navCtrl.push(RestriccionesPage, {cliente: cliente});
+  // }
+  irAvistaAntecedentes(cliente) {
+    this.navCtrl.push(AntecedentesUsuarioPage, {cliente: cliente});
   }
 }

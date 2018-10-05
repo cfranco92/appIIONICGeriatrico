@@ -1,0 +1,105 @@
+<!--
+  Generated template for the AntecedentesUsuarioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Antecedentes Paciente</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>  
+  <ion-list>        
+    <h1 text-center>Psicológicos y/o Psiquiatricos</h1>
+    <!-- Nombre y Apellidos Médico Tratante -->
+      <ion-item>
+        <ion-label floating>Nombre y Apellidos Médico Tratante</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.psicologicosPsiquiatricos.nombreApellidosMedico"></ion-input>
+      </ion-item>
+      <!-- Contacto del Médico -->
+      <ion-item>
+          <ion-label floating>Contacto Médico Tratante</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.psicologicosPsiquiatricos.contactoMedico"></ion-input>
+      </ion-item>
+      <!-- Diagnóstico -->
+      <ion-item>
+          <ion-label floating>Diagnóstico</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.psicologicosPsiquiatricos.diagnostico"></ion-input>
+      </ion-item>
+      <!-- Tratamiento -->
+      <ion-item>
+          <ion-label floating>Tratamiento</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.psicologicosPsiquiatricos.tratamiento"></ion-input>
+      </ion-item>      
+  </ion-list>
+  <ion-list>        
+    <h1 text-center>Cognitivos</h1>
+    <!-- Cambios memoria -->
+      <ion-item>
+        <ion-label floating>Cambios Memoria</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.cognitivos.cambiosMemoria"></ion-input>
+      </ion-item>
+      <!-- Descripción -->
+      <ion-item>
+          <ion-label floating>Descripción</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.cognitivos.descripcion"></ion-input>
+      </ion-item>      
+  </ion-list>
+  <ion-list>        
+    <h1 text-center>Físicos</h1>
+    <!-- Enfermedades -->
+      <ion-item>
+        <ion-label floating>Enfermedades</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.enfermedades"></ion-input>
+      </ion-item>
+      <!-- Crónicas SI/NO -->
+      <ion-item>
+          <ion-label floating>Crónicas SI/NO</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.fisicosCronicasSINO"></ion-input>
+      </ion-item>
+      <!-- Detalle -->
+      <ion-item>
+          <ion-label floating>Detalle</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.detalleCronicas"></ion-input>
+      </ion-item>
+      <!-- Tiempo-->
+      <ion-item>
+          <ion-label floating>Tiempo</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.tiempoCronicas"></ion-input>
+      </ion-item> 
+      <!-- EUCLU ??????????-->
+      <ion-item>
+          <ion-label floating>EUCLU</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.euclu"></ion-input>
+      </ion-item>  
+      <!-- Tratamiento-->
+      <ion-item>
+          <ion-label floating>Tratamiento</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.tratamientoCronicas"></ion-input>
+      </ion-item>     
+  </ion-list>
+  <ion-list>        
+    <h1 text-center>Alergias</h1>
+    <!-- Enfermedades -->
+      <ion-item>
+        <ion-label floating>Médico tratante</ion-label>
+        <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.alergias.medico"></ion-input>
+      </ion-item>
+      <!-- Crónicas SI/NO -->
+      <ion-item>
+          <ion-label floating>Otros</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.alergias.otros"></ion-input>
+      </ion-item>
+      <!-- Detalle -->
+      <ion-item>
+          <ion-label floating>Medicamentos</ion-label>
+          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.alergias.medicamentos"></ion-input>
+      </ion-item>      
+  </ion-list>
+  <button ion-button full (click)="irAVistaFamiliar(cliente)">Familiar</button>
+</ion-content>

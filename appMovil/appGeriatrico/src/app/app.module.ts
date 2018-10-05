@@ -1,3 +1,5 @@
+import { FamiliarUsuarioPage } from './../pages/familiar-usuario/familiar-usuario';
+import { AntecedentesUsuarioPage } from './../pages/antecedentes-usuario/antecedentes-usuario';
 import { ClienteDetallePage } from './../pages/cliente-detalle/cliente-detalle';
 import { AcudientePage } from './../pages/acudiente/acudiente';
 import { PersonalService } from './../services/personal.service';
@@ -49,8 +51,10 @@ import { RestriccionesPage } from '../pages/restricciones/restricciones';
     NotificacionesPage,
     CrearClientePage,
     ClienteDetallePage,
-    AcudientePage,
     DatosMedicosPage,
+    AcudientePage,    
+    AntecedentesUsuarioPage,
+    FamiliarUsuarioPage,
     RestriccionesPage,
     ListaClientesPage,
     CrearPersonalPage,
@@ -74,8 +78,10 @@ import { RestriccionesPage } from '../pages/restricciones/restricciones';
     NotificacionesPage,
     CrearClientePage,
     ClienteDetallePage,
-    AcudientePage,
     DatosMedicosPage,
+    AcudientePage,    
+    AntecedentesUsuarioPage,
+    FamiliarUsuarioPage,
     RestriccionesPage,
     ListaClientesPage,
     CrearPersonalPage,

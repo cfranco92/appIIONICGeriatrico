@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DatosMedicosPage } from '../datos-medicos/datos-medicos';
 
 /**
- * Generated class for the AcudientePage page.
+ * Generated class for the FamiliarUsuarioPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,19 +10,19 @@ import { DatosMedicosPage } from '../datos-medicos/datos-medicos';
 
 @IonicPage()
 @Component({
-  selector: 'page-acudiente',
-  templateUrl: 'acudiente.html',
+  selector: 'page-familiar-usuario',
+  templateUrl: 'familiar-usuario.html',
 })
-export class AcudientePage {
+export class FamiliarUsuarioPage {
   cliente: any = {};
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.cliente = navParams.get('cliente');
+    console.log("Help")
+    console.log(this.cliente);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AcudientePage');
+    console.log('ionViewDidLoad FamiliarUsuarioPage');
   }
-  irAVistaDatosMedicos(cliente) {
-    this.navCtrl.push(DatosMedicosPage, {cliente: cliente});
-  }
+
 }

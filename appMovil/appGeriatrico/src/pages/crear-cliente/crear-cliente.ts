@@ -22,7 +22,7 @@ export class CrearClientePage {
   cliente: any = {
     acudientes: { acudientePrincipal: {}, acudienteSecundario:{}},
     parientes: { pariente1: {},pariente2:{}},
-    medico: {},
+    medico: { antecedentes: { psicologicosPsiquiatricos: {}, cognitivos: {}, fisicos:{}, alergias:{}, familiar:{}, traumas:{}}},
     seguros: {},
     observaciones: {}
   };  
@@ -35,7 +35,7 @@ export class CrearClientePage {
   url: Observable<string>;
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private storage: AngularFireStorage) {      
       if(!this.cliente.id) {
-        this.cliente.id = Date.now();
+        this.cliente.id = Date.now();        
       }              
   }
 
@@ -104,8 +104,7 @@ export class CrearClientePage {
     console.log('ionViewDidLoad CrearClientePage');
   }
 
-  irAVistaAcudiente(cliente){
-    this.cliente.foto = this.downloadURL;
+  irAVistaAcudiente(cliente) {    
     this.navCtrl.push(AcudientePage, {cliente: cliente});
   }
 
