@@ -49,7 +49,7 @@ export class DatosMedicosPage {
     const task = this.ref.putString(this.image, 'data_url').then(() => {      
       this.ref.getDownloadURL().subscribe(url => {        
         this.downloadURL = url;
-        this.cliente.foto = this.downloadURL;
+        this.cliente.seguros.fotoCarnetAsistenciaMedica = this.downloadURL;
         alert("Foto cargada con éxito en la base de datos")
       })
     }); 

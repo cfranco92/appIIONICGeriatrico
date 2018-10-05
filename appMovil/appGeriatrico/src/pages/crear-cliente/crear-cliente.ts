@@ -19,13 +19,132 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'crear-cliente.html',
 })
 export class CrearClientePage {
+  // La revisión de datos queda en acudiente.html (sin revisar)
   cliente: any = {
-    acudientes: { acudientePrincipal: {}, acudienteSecundario:{}},
-    parientes: { pariente1: {},pariente2:{}},
-    medico: { antecedentes: { psicologicosPsiquiatricos: {}, cognitivos: {}, fisicos:{}, alergias:{}, familiar:{}, traumas:{}}},
-    seguros: {},
-    observaciones: {}
-  };  
+    acudientes : {
+      acudientePrincipal : {
+        apellido1 : " ",
+        apellido2 : " ",
+        cedula : " ",
+        nombre1 : " ",
+        nombre2 : " ",
+        parentesco : " "
+      },
+      acudienteSecundario : {
+        apellido1 : " ",
+        apellido2 : " ",
+        cedula : " ",
+        nombre1 : " ",
+        nombre2 : " ",
+        parentesco : " "
+      }
+    },
+    apellido1 : " ",
+    apellido2 : " ",
+    documentoIdentidad : " ",
+    edad : " ",
+    estadoCivil : " ",
+    fechaNacimiento : " ",
+    foto : " ",
+    fotoDocumentoIdentidad : " ",
+    genero : " ",
+    id : " ",
+    medicamentos : {
+      dosisMedicamento1 : " ",
+      dosisMedicamento2 : " ",
+      dosisMedicamento3 : " ",
+      dosisMedicamento4 : " ",
+      fotoMedicamento1 : " ",
+      horarioMedicamento1 : " ",
+      horarioMedicamento2 : " ",
+      horarioMedicamento3 : " ",
+      horarioMedicamento4 : " ",
+      medicoTratante : " ",
+      nombreMedicamento1 : " ",
+      nombreMedicamento2 : " ",
+      nombreMedicamento3 : " ",
+      nombreMedicamento4 : " ",
+      viaMedicamento1 : " ",
+      viaMedicamento2 : " ",
+      viaMedicamento3 : " ",
+      viaMedicamento4 : " "
+    },
+    medico : {
+      antecedentes : {
+        alergias : {
+          medicamentos : " ",
+          medico : " ",
+          otros : " "
+        },
+        cognitivos : {
+          cambiosMemoria : " ",
+          descripcion : " "
+        },
+        familiar : {
+          PerdidaReciente : " ",
+          enfermedad1 : " ",
+          enfermedad2 : " ",
+          parentescoEnfermedad1 : " ",
+          parentescoEnfermedad2 : " "
+        },
+        fisicos : {
+          detalleCronicas : " ",
+          enfermedades : " ",
+          euclu : " ",
+          fisicosCronicasSINO : " ",
+          tiempoCronicas : " ",
+          tratamientoCronicas : " "
+        },
+        psicologicosPsiquiatricos : {
+          contactoMedico : " ",
+          diagnostico : " ",
+          nombreApellidosMedico : " ",
+          tratamiento : " "
+        },
+        traumas : {
+          otrosTrauma : " ",
+          quienTrauma : " ",
+          suceso : " ",
+          tiempoTrauma : " "
+        }
+      },
+      apellido1 : " ",
+      apellido2 : " ",
+      direccionConsultorio : " ",
+      email : " ",
+      especialidad : " ",
+      nombre1 : " ",
+      nombre2 : " ",
+      tel1 : " ",
+      tel2 : " "
+    },
+    nombre1 : " ",
+    nombre2 : " ",
+    observaciones : {
+      salidas : " ",
+      visitas : " "
+    },
+    parientes : {
+      pariente1 : {
+        apellido1 : " ",
+        cedula : " ",
+        email : " ",
+        nombre1 : " ",
+        nombre2 : " ",
+        parentesco : " ",
+        tel1 : " ",
+        tel2 : " "
+      }
+    },
+    seguros : {
+      asistenciaMedica : " ",
+      eps : " ",
+      funerariaTel : " ",
+      funerarios : " ",
+      prepagada : " "
+    },
+    tipoDocumentoIdentidad : " "
+  };
   ref: AngularFireStorageReference;  
   uploadProgress: Observable<number>;
   downloadURL: Observable<string>;

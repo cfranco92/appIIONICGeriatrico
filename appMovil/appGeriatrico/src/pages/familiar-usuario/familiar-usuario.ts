@@ -1,3 +1,4 @@
+import { MedicamentosPage } from './../medicamentos/medicamentos';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -24,5 +25,7 @@ export class FamiliarUsuarioPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FamiliarUsuarioPage');
   }
-
+  irAVistaMedicamentos(cliente) {
+    this.navCtrl.push(MedicamentosPage, {cliente: cliente});
+  }
 }

@@ -20,10 +20,12 @@
         <ion-avatar item-start>
           <img src="{{cliente.foto}}"/>              
         </ion-avatar> 
-        <h2>{{cliente.nombre}}</h2>
-        <h3>{{cliente.apellidos}}</h3>
-        <h3>{{cliente.cedula}}</h3>
-        <p>{{cliente.fechaNacimiento}}</p>
+        <h2>Nombre1: {{cliente.nombre1}}</h2>
+        <h2>Nombre2: {{cliente.nombre2}}</h2>
+        <h3>Apellido1: {{cliente.apellido1}}</h3>
+        <h3>Apellido2: {{cliente.apellido2}}</h3>
+        <h3>Documento: {{cliente.documentoIdentidad}}</h3>
+        <p>Edad: {{cliente.edad}}</p>
       </ion-item>
       <ion-item-options side="left">
         <button ion-button color="primary">
@@ -32,7 +34,7 @@
         </button>
         <button ion-button color="secondary">
           <ion-icon name="call"></ion-icon>
-          Call
+          Llamar
         </button>
       </ion-item-options>
       <ion-item-options side="right">

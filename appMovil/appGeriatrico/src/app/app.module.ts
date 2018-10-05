@@ -1,3 +1,4 @@
+import { MedicamentosPage } from './../pages/medicamentos/medicamentos';
 import { FamiliarUsuarioPage } from './../pages/familiar-usuario/familiar-usuario';
 import { AntecedentesUsuarioPage } from './../pages/antecedentes-usuario/antecedentes-usuario';
 import { ClienteDetallePage } from './../pages/cliente-detalle/cliente-detalle';
@@ -55,6 +56,7 @@ import { RestriccionesPage } from '../pages/restricciones/restricciones';
     AcudientePage,    
     AntecedentesUsuarioPage,
     FamiliarUsuarioPage,
+    MedicamentosPage,
     RestriccionesPage,
     ListaClientesPage,
     CrearPersonalPage,
@@ -82,6 +84,7 @@ import { RestriccionesPage } from '../pages/restricciones/restricciones';
     AcudientePage,    
     AntecedentesUsuarioPage,
     FamiliarUsuarioPage,
+    MedicamentosPage,
     RestriccionesPage,
     ListaClientesPage,
     CrearPersonalPage,
