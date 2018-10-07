@@ -131,17 +131,22 @@
           <button ion-button full (click)="uploadHandler()">Tomar Foto</button>
         </ion-item>                      
         </ion-list>
+        <!-- Restricciones -->
         <ion-list>
           <h1 text-center>Restricciones</h1>                            
           <ion-list>
             <ion-item>
               <ion-label>Visitas</ion-label>
-              <ion-select [(ngModel)]="cliente.observaciones.visitas">
+              <ion-select [(ngModel)]="cliente.observaciones.visitas" (ionChange)="changeBoolVisitas()">
                 <ion-option value="Si">Si</ion-option>
                 <ion-option value="No">No</ion-option>
               </ion-select>
             </ion-item>
           </ion-list>
+          <ion-item *ngIf="boolVisitas" >
+            <ion-label floating>Observaciones De Visitas</ion-label>
+            <ion-input type="text" [(ngModel)]="cliente.observaciones.visitasObservaciones"></ion-input>
+          </ion-item>
           <ion-list>
               <ion-item>
                 <ion-label>Salidas</ion-label>

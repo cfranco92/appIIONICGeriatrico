@@ -22,6 +22,7 @@ export class DatosMedicosPage {
   ref: AngularFireStorageReference;  
   downloadURL: Observable<string>;
   image: string; // base64
+  boolVisitas: boolean = false;
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private storage: AngularFireStorage) {      
     this.cliente = navParams.get('cliente');
     console.log(this.cliente);
@@ -53,6 +54,14 @@ export class DatosMedicosPage {
         alert("Foto cargada con éxito en la base de datos")
       })
     }); 
+  }
+
+  changeBoolVisitas(){
+    if (this.cliente.observaciones.visitas == "Si"){
+      this.boolVisitas = true;
+    } else{
+      this.boolVisitas = false;
+    }
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad DatosMedicosPage');
