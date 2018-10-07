@@ -1,3 +1,4 @@
+import { ClienteService } from './../../services/clientes.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,10 +16,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ClienteDetallePage {
   cliente: any = {};
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public crearClienteServices: ClienteService) {
     this.cliente = navParams.get('cliente') || {};
   }
 
+  guardarCambios(){
+    this.crearClienteServices.editCliente(this.cliente);    
+    this.navCtrl.pop();
+    console.log(this.cliente); 
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad ClienteDetallePage');
   }

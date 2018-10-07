@@ -121,7 +121,10 @@ export class MedicamentosPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MedicamentosPage');
   }
-  guardarClienteVolverHome() {       
+  guardarClienteVolverHome() {   
+    if(!this.cliente.id) {
+      this.cliente.id = Date.now();        
+    }        
     this.crearClienteServices.createCliente(this.cliente);    
     this.navCtrl.popToRoot();
     console.log(this.cliente);    

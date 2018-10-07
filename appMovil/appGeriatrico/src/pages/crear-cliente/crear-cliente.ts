@@ -48,7 +48,7 @@ export class CrearClientePage {
     foto : " ",
     fotoDocumentoIdentidad : " ",
     genero : " ",
-    id : " ",
+    // id : "",
     medicamentos : {
       dosisMedicamento1 : " ",
       dosisMedicamento2 : " ",
@@ -122,7 +122,9 @@ export class CrearClientePage {
     nombre2 : " ",
     observaciones : {
       salidas : " ",
-      visitas : " "
+      visitas : " ",
+      salidasObservaciones : " ",
+      visitasObservaciones : " "
     },
     parientes : {
       pariente1 : {
@@ -153,9 +155,7 @@ export class CrearClientePage {
   image: string; // base64
   url: Observable<string>;
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private storage: AngularFireStorage) {      
-      if(!this.cliente.id) {
-        this.cliente.id = Date.now();        
-      }              
+                
   }
 
   async takePhoto() {

@@ -23,6 +23,7 @@ export class DatosMedicosPage {
   downloadURL: Observable<string>;
   image: string; // base64
   boolVisitas: boolean = false;
+  boolSalidas: boolean = false;
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private storage: AngularFireStorage) {      
     this.cliente = navParams.get('cliente');
     console.log(this.cliente);
@@ -61,6 +62,14 @@ export class DatosMedicosPage {
       this.boolVisitas = true;
     } else{
       this.boolVisitas = false;
+    }
+  }
+
+  changeBoolSalidas(){
+    if(this.cliente.observaciones.salidas == "Si"){
+      this.boolSalidas = true;
+    } else{
+      this.boolSalidas = false;
     }
   }
   ionViewDidLoad() {

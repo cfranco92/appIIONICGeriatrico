@@ -137,23 +137,28 @@
           <ion-list>
             <ion-item>
               <ion-label>Visitas</ion-label>
+              <!-- WARNING!!! DEPENDENCIA EN TS cliente.observaciones.visitas -->
               <ion-select [(ngModel)]="cliente.observaciones.visitas" (ionChange)="changeBoolVisitas()">
                 <ion-option value="Si">Si</ion-option>
                 <ion-option value="No">No</ion-option>
               </ion-select>
             </ion-item>
-          </ion-list>
-          <ion-item *ngIf="boolVisitas" >
-            <ion-label floating>Observaciones De Visitas</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.observaciones.visitasObservaciones"></ion-input>
-          </ion-item>
+            <ion-item *ngIf="boolVisitas" >
+              <ion-label floating>Observaciones De Visitas</ion-label>
+              <ion-input type="text" [(ngModel)]="cliente.observaciones.visitasObservaciones"></ion-input>
+            </ion-item>
+          </ion-list>          
           <ion-list>
               <ion-item>
                 <ion-label>Salidas</ion-label>
-                <ion-select [(ngModel)]="cliente.observaciones.salidas">
+                <ion-select [(ngModel)]="cliente.observaciones.salidas" (ionChange)="changeBoolSalidas()">
                   <ion-option value="Si">Si</ion-option>
                   <ion-option value="No">No</ion-option>
                 </ion-select>
+              </ion-item>
+              <ion-item *ngIf="boolSalidas" >
+                <ion-label floating>Observaciones De Salidas</ion-label>
+                <ion-input type="text" [(ngModel)]="cliente.observaciones.salidasObservaciones"></ion-input>
               </ion-item>
           </ion-list>                  
         </ion-list>
