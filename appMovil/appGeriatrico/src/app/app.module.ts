@@ -1,3 +1,6 @@
+import { MedicamentoDetallePage } from './../pages/medicamento-detalle/medicamento-detalle';
+import { DBCRUDService } from './../services/DBCRUDService.service';
+import { AgregarInventarioPage } from './../pages/agregar-inventario/agregar-inventario';
 import { MedicamentosPage } from './../pages/medicamentos/medicamentos';
 import { FamiliarUsuarioPage } from './../pages/familiar-usuario/familiar-usuario';
 import { AntecedentesUsuarioPage } from './../pages/antecedentes-usuario/antecedentes-usuario';
@@ -41,6 +44,8 @@ import { HomePage } from '../pages/home/home';
 import { ListaClientesPage } from '../pages/lista-clientes/lista-clientes';
 import { DatosMedicosPage } from '../pages/datos-medicos/datos-medicos';
 import { RestriccionesPage } from '../pages/restricciones/restricciones';
+import { CrearMedicamentoPage } from '../pages/crear-medicamento/crear-medicamento';
+import { ListaInventarioPage } from '../pages/lista-inventario/lista-inventario';
 
 @NgModule({
   declarations: [
@@ -60,7 +65,11 @@ import { RestriccionesPage } from '../pages/restricciones/restricciones';
     RestriccionesPage,
     ListaClientesPage,
     CrearPersonalPage,
-    ListaPersonalPage
+    ListaPersonalPage,
+    ListaInventarioPage,
+    AgregarInventarioPage,
+    CrearMedicamentoPage,
+    MedicamentoDetallePage
   ],
   imports: [
     BrowserModule,
@@ -88,13 +97,18 @@ import { RestriccionesPage } from '../pages/restricciones/restricciones';
     RestriccionesPage,
     ListaClientesPage,
     CrearPersonalPage,
-    ListaPersonalPage
+    ListaPersonalPage,
+    ListaInventarioPage,
+    AgregarInventarioPage,
+    CrearMedicamentoPage,
+    MedicamentoDetallePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ClienteService,
+    DBCRUDService,
     PersonalService,
     Camera
   ]

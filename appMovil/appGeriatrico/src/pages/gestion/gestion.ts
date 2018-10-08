@@ -1,9 +1,11 @@
+import { AgregarInventarioPage } from './../agregar-inventario/agregar-inventario';
 import { ListaPersonalPage } from './../lista-personal/lista-personal';
 import { CrearPersonalPage } from './../crear-personal/crear-personal';
 import { ListaClientesPage } from './../lista-clientes/lista-clientes';
 import { CrearClientePage } from './../crear-cliente/crear-cliente';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ListaInventarioPage } from '../lista-inventario/lista-inventario';
 
 /**
  * Generated class for the GestionPage page.
@@ -37,5 +39,10 @@ export class GestionPage {
   irAVistaListaPersonal() {
     this.navCtrl.push(ListaPersonalPage);
   }
-  
+  irAVistaAgregarInventario() {
+    this.navCtrl.push(AgregarInventarioPage);
+  }
+  irAVistaListaInventario() {
+    this.navCtrl.push(ListaInventarioPage);
+  }
 }

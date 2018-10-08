@@ -1,0 +1,88 @@
+<!--
+  Generated template for the ListaInventarioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>listaInventario</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+    <ion-item-group>
+      <ion-item-divider color="light">Medicamentos</ion-item-divider>
+      <ion-item>
+        <ion-card>
+          <img src="../../assets/imgs/medicamentos.jpg"/>              
+        </ion-card>
+        <p>
+          Medicamentos actualmente en bodega.
+        </p>
+      </ion-item>
+      <!-- afdsfsd       -->
+      <ion-list>
+        <ion-item-sliding *ngFor="let medicamento of medicamentos">
+          <ion-item (click)="irAVistaDeDetalleExistente(medicamento)">          
+            <ion-avatar item-start>
+              <img src="{{medicamento.foto}}"/>              
+            </ion-avatar> 
+            <h2>Nombre: {{medicamento.nombre}}</h2>
+            <h2>Fecha Vencimiento: {{medicamento.fechaVencimiento}}</h2>
+            <h3>Cantidad: {{medicamento.cantidad}}</h3>
+            <h3>Cantidad Concentración: {{medicamento.cantidadConcentracion}}</h3>
+            <h3>Concentración: {{medicamento.cocentracion}}</h3>                
+          </ion-item>
+          <ion-item-options side="left">
+            <button ion-button color="primary">
+            <ion-icon name="text"></ion-icon>
+              Text
+            </button>
+            <button ion-button color="secondary">
+            <ion-icon name="call"></ion-icon>
+              Llamar
+            </button>
+          </ion-item-options>
+          <ion-item-options side="right">
+            <button ion-button color="danger" (click)="deleteMedicamento(medicamento)">
+            <ion-icon name="trash"></ion-icon>
+              Borrar
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+        
+  </ion-item-group>
+  </ion-list>
+  <ion-list>
+    <ion-item-group>    
+      <ion-item-divider color="light">Oficina</ion-item-divider>
+      <ion-item>
+        <ion-card>
+          <img src="../../assets/imgs/oficina.jpg"/>              
+        </ion-card>
+        <p>
+          Implementos de oficina.
+        </p>
+      </ion-item>      
+    </ion-item-group>
+  </ion-list>  
+  <ion-list>
+    <ion-item-group>    
+      <ion-item-divider color="light">Aseo</ion-item-divider>
+      <ion-item>
+        <ion-card>
+          <img src="../../assets/imgs/aseo.jpg"/>              
+        </ion-card>
+        <p>
+          Implementos de aseo general.
+        </p>
+      </ion-item>         
+    </ion-item-group>
+  </ion-list> 
+</ion-content>

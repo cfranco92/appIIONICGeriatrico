@@ -1,5 +1,5 @@
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { AngularFireStorage, AngularFireUploadTask, AngularFireStorageReference } from 'angularfire2/storage';
+import { AngularFireStorage, AngularFireStorageReference } from 'angularfire2/storage';
 import { Observable } from 'rxjs/Observable';
 import { AcudientePage } from './../acudiente/acudiente';
 
@@ -155,7 +155,9 @@ export class CrearClientePage {
   image: string; // base64
   url: Observable<string>;
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private storage: AngularFireStorage) {      
-                
+    if(!this.cliente.id) {
+      this.cliente.id = Date.now();        
+    }
   }
 
   async takePhoto() {
@@ -175,7 +177,7 @@ export class CrearClientePage {
     this.ref = this.storage.ref(filePath);
     this.image = 'data:image/jpg;base64,' + file;
     alert("Cargando foto en la base de datos");
-    const task = this.ref.putString(this.image, 'data_url').then(() => {      
+    this.ref.putString(this.image, 'data_url').then(() => {      
       this.ref.getDownloadURL().subscribe(url => {                
         this.downloadURL = url;
         this.cliente.foto = this.downloadURL;
@@ -188,7 +190,7 @@ export class CrearClientePage {
     this.ref = this.storage.ref(filePath);
     this.image = 'data:image/jpg;base64,' + file;
     alert("Cargando foto en la base de datos");
-    const task = this.ref.putString(this.image, 'data_url').then(() => {      
+    this.ref.putString(this.image, 'data_url').then(() => {      
       this.ref.getDownloadURL().subscribe(url => {                                
         this.downloadURL = url;
         this.cliente.fotoDocumentoIdentidad = this.downloadURL;

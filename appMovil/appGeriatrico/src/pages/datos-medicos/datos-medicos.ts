@@ -48,7 +48,7 @@ export class DatosMedicosPage {
     this.ref = this.storage.ref(filePath);
     this.image = 'data:image/jpg;base64,' + file;
     alert("Cargando foto en la base de datos");
-    const task = this.ref.putString(this.image, 'data_url').then(() => {      
+    this.ref.putString(this.image, 'data_url').then(() => {      
       this.ref.getDownloadURL().subscribe(url => {        
         this.downloadURL = url;
         this.cliente.seguros.fotoCarnetAsistenciaMedica = this.downloadURL;

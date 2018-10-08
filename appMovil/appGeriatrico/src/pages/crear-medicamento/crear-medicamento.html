@@ -1,0 +1,85 @@
+<!--
+  Generated template for the CrearMedicamentoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Agregar Medicamento</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list>
+      <h1 text-center>Nuevo Medicamento</h1>
+      <!-- Foto Paciente -->
+      <ion-item>
+        <ion-thumbnail item-start>          
+          <img src="{{medicamento.foto}}">
+        </ion-thumbnail>
+        <h2>FOTO MEDICAMENTO</h2>
+        <button ion-button full (click)="uploadHandler()">Tomar Foto</button>
+      </ion-item>
+      <!-- Nombre Medicamento -->
+      <ion-item>
+        <ion-label floating>Nombre Genérico - Comercial</ion-label>
+        <ion-input type="text" [(ngModel)]="medicamento.nombre"></ion-input>
+      </ion-item>
+      <!-- Presentacion -->
+      <ion-item>
+        <ion-label>Presentación</ion-label>
+        <ion-select [(ngModel)]="medicamento.presentacion">
+          <ion-option value="Pastilla">Pastilla</ion-option>          
+          <ion-option value="Capsulo">Capsula</ion-option>          
+          <ion-option value="Gotas">Gotas</ion-option> 
+          <ion-option value="Jarabe">Jarabe</ion-option>                   
+          <ion-option value="Unguento">Unguento</ion-option>          
+          <ion-option value="Ampolla">Ampolla</ion-option>          
+          <ion-option value="Parche">Parche</ion-option>          
+          <ion-option value="Sondas">Sondas</ion-option>          
+          <ion-option value="Gasas">Gasas</ion-option>
+          <ion-option value="Jabón Líquido">Jabón Líquido</ion-option>          
+        </ion-select>
+      </ion-item>
+      <!-- Cantidad -->
+      <ion-item>
+        <ion-label floating>Cantidad</ion-label>
+        <ion-input type="text" [(ngModel)]="medicamento.cantidad"></ion-input>
+      </ion-item>
+      <!-- Concentración -->
+      <ion-item>
+        <ion-label>Concentración</ion-label>
+        <ion-select [(ngModel)]="medicamento.concentracion">
+          <ion-option value="mg">mg</ion-option>          
+          <ion-option value="µg">µg</ion-option>
+          <ion-option value="otro">otro</ion-option>
+          <ion-option value="No Aplica">No aplica</ion-option>                    
+        </ion-select>
+      </ion-item>
+      <!-- Cantidad Concentración-->
+      <ion-item>
+        <ion-label floating>Cantidad de Concentración</ion-label>
+        <ion-input type="text" [(ngModel)]="medicamento.cantidadConcentracion"></ion-input>
+      </ion-item>
+      <!-- LABORATORIO -->
+      <ion-item>
+        <ion-label floating>Laboratorio</ion-label>
+        <ion-input type="text" [(ngModel)]="medicamento.laboratorio"></ion-input>
+      </ion-item>
+      <!-- LOTE -->
+      <ion-item>
+        <ion-label floating>Lote</ion-label>
+        <ion-input type="text" [(ngModel)]="medicamento.lote"></ion-input>
+      </ion-item>
+      <!-- Fecha de Vencimiento -->
+      <ion-item>
+        <ion-label>Fecha de Vencimiento</ion-label>
+        <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="medicamento.fechaVencimiento"></ion-datetime>
+      </ion-item>
+    </ion-list>
+    <button ion-button full (click)="guardarMedicamentoVolverHome()">Guardar Medicamento</button>
+</ion-content>
