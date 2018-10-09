@@ -16,8 +16,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ClienteDetallePage {
   cliente: any = {};
+  parientes: any = [];
+  medicamentos: any = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, public crearClienteServices: ClienteService) {
     this.cliente = navParams.get('cliente') || {};
+    this.getMedicamentos();
+    this.getParientes();    
+  }
+
+  getParientes(){
+    for (var i = 0; i < this.cliente.parientes.length; ++i){
+      this.parientes[i] = this.cliente.parientes[i];
+    }        
+  }
+
+  getMedicamentos() {
+    for (var j = 0; j < this.cliente.medicamentos.length; ++j){
+      this.medicamentos[j] = this.cliente.medicamentos[j];
+    }    
   }
 
   guardarCambios(){

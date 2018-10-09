@@ -16,14 +16,32 @@ import { DatosMedicosPage } from '../datos-medicos/datos-medicos';
 })
 export class AcudientePage {
   cliente: any = {};
+  parientes: any = [];
+  contadorParientes: number = 0;
+  boolContador: boolean = true;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.cliente = navParams.get('cliente');
+    this.cliente = navParams.get('cliente');    
+  }
+
+  agregarPariente() {
+    console.log("agregado")
+    this.boolContador = false;
+    this.contadorParientes++;
+    var nuevoPariente: any = {};
+    nuevoPariente.contador = this.contadorParientes;
+    this.parientes.push(nuevoPariente);        
+  }
+
+  copyArray() {    
+    for (var i = 0; i < this.parientes.length; ++i)
+    this.cliente.parientes[i] = this.parientes[i];    
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AcudientePage');
   }
   irAVistaDatosMedicos(cliente) {
+    this.copyArray();
     this.navCtrl.push(DatosMedicosPage, {cliente: cliente});
   }
 }

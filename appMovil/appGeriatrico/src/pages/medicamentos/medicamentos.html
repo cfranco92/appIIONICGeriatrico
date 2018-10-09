@@ -14,168 +14,65 @@
 
 
 <ion-content padding>
-  <ion-list>
-      <h1 text-center>{{cliente.nombre1}}</h1>
+  <ion-card>
+    <ion-card-header>
+      <img src="../../assets/imgs/medicamentos.jpg" />
+    </ion-card-header>
+    <ion-card-content>
+      Medicamentos
+    </ion-card-content>
+  </ion-card>
+  
+
+
+  <ion-list>                     
       <ion-item>
-          <ion-label floating>Cédula</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.documentoIdentidad"></ion-input>
+          <button *ngIf="boolContador"  ion-fab (click)="agregarMedicamento()"><ion-icon name="add"></ion-icon></button>          
+      </ion-item>
+      <ion-item-sliding *ngFor="let medicamento of medicamentos; let i = index">          
+        <ion-item>          
+          <h1>Medicamento {{i+1}}</h1>
         </ion-item>
-      <ion-item>
-          <ion-label floating>Medico Tratante</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medicamentos.medicoTratante"></ion-input>
-      </ion-item>                    
-    </ion-list>
-
-    <ion-list>
-        <h1 text-center>Medicamento 1</h1>
         <ion-item>
             <ion-label floating>Nombre Medicamento</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.nombreMedicamento1"></ion-input>
-          </ion-item> 
-        <ion-item>
-              <ion-label floating>Dosis</ion-label>
-              <ion-input type="text" [(ngModel)]="cliente.medicamentos.dosisMedicamento1"></ion-input>
-        </ion-item>  
-        <ion-item>
-            <ion-label floating>Horario</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.horarioMedicamento1"></ion-input>
-        </ion-item> 
-        <ion-item>
-            <ion-label>Vía de Administración</ion-label>
-            <ion-select [(ngModel)]="cliente.medicamentos.viaMedicamento1">
-              <ion-option value="Inhalado">Inhalado</ion-option>
-              <ion-option value="Oftalmológico">Oftalmológico</ion-option>
-              <ion-option value="Inyectado">Inyectado</ion-option>
-              <ion-option value="Tópico">Tópico</ion-option>
-              <ion-option value="Nasal">Nasal</ion-option>
-              <ion-option value="Rectal">Rectal</ion-option>
-              <ion-option value="Oposito.">Oposito.</ion-option>
-              <ion-option value="Parche">Parche</ion-option>
-              <ion-option value="Otro">Otro</ion-option>
-            </ion-select>
+            <ion-input type="text" [(ngModel)]="medicamento.nombreMedicamento"></ion-input>
           </ion-item>
-        <!-- Foto Paciente -->
-        <ion-item>
-          <ion-thumbnail item-start>          
-            <img src="{{cliente.medicamentos.fotoMedicamento1}}">
-          </ion-thumbnail>
-          <h2>FOTO FORMULA</h2>
-          <button ion-button full (click)="uploadHandler()">Tomar Foto</button>
-        </ion-item>             
-    </ion-list>
-
-    <ion-list>
-        <h1 text-center>Medicamento 2</h1>
-        <ion-item>
-            <ion-label floating>Nombre Medicamento</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.nombreMedicamento2"></ion-input>
-          </ion-item> 
-        <ion-item>
+          <ion-item>
               <ion-label floating>Dosis</ion-label>
-              <ion-input type="text" [(ngModel)]="cliente.medicamentos.dosisMedicamento2"></ion-input>
-        </ion-item>  
-        <ion-item>
-            <ion-label floating>Horario</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.horarioMedicamento2"></ion-input>
-        </ion-item> 
-        <ion-item>
-            <ion-label>Vía de Administración</ion-label>
-            <ion-select [(ngModel)]="cliente.medicamentos.viaMedicamento2">
-              <ion-option value="Inhalado">Inhalado</ion-option>
-              <ion-option value="Oftalmológico">Oftalmológico</ion-option>
-              <ion-option value="Inyectado">Inyectado</ion-option>
-              <ion-option value="Tópico">Tópico</ion-option>
-              <ion-option value="Nasal">Nasal</ion-option>
-              <ion-option value="Rectal">Rectal</ion-option>
-              <ion-option value="Oposito.">Oposito.</ion-option>
-              <ion-option value="Parche">Parche</ion-option>
-              <ion-option value="Otro">Otro</ion-option>
-            </ion-select>
-          </ion-item>
-        <!-- Foto Paciente -->
-        <ion-item>
-          <ion-thumbnail item-start>          
-            <img src="{{cliente.medicamentos.fotoMedicamento2}}">
-          </ion-thumbnail>
-          <h2>FOTO FORMULA</h2>
-          <button ion-button full (click)="uploadHandler2()">Tomar Foto</button>
-        </ion-item>             
+              <ion-input type="text" [(ngModel)]="medicamento.dosisMedicamento"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label floating>Horario</ion-label>
+                <ion-input type="text" [(ngModel)]="medicamento.horarioMedicamento"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label>Vía de Administración</ion-label>
+                  <ion-select [(ngModel)]="medicamento.viaMedicamento">
+                    <ion-option value="Inhalado">Inhalado</ion-option>
+                    <ion-option value="Oftalmológico">Oftalmológico</ion-option>
+                    <ion-option value="Inyectado">Inyectado</ion-option>
+                    <ion-option value="Tópico">Tópico</ion-option>
+                    <ion-option value="Nasal">Nasal</ion-option>
+                    <ion-option value="Rectal">Rectal</ion-option>
+                    <ion-option value="Oposito.">Oposito.</ion-option>
+                    <ion-option value="Parche">Parche</ion-option>
+                    <ion-option value="Otro">Otro</ion-option>
+                  </ion-select>
+                </ion-item>
+                <ion-item>
+                    <ion-thumbnail item-start>
+                      <img src="{{medicamento.fotoMedicamento}}">
+                    </ion-thumbnail>
+                    <h2>FOTO FORMULA</h2>
+                    <button ion-button full (click)="uploadHandler(i)">Tomar Foto</button>
+                  </ion-item>
+                  <ion-item>
+                    <button ion-fab (click)="agregarMedicamento()">
+                      <ion-icon name="add"></ion-icon>
+                    </button>
+                  </ion-item>
+                  <hr>
+      </ion-item-sliding>      
     </ion-list>
-
-    <ion-list>
-        <h1 text-center>Medicamento 3</h1>
-        <ion-item>
-            <ion-label floating>Nombre Medicamento</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.nombreMedicamento3"></ion-input>
-          </ion-item> 
-        <ion-item>
-              <ion-label floating>Dosis</ion-label>
-              <ion-input type="text" [(ngModel)]="cliente.medicamentos.dosisMedicamento3"></ion-input>
-        </ion-item>  
-        <ion-item>
-            <ion-label floating>Horario</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.horarioMedicamento3"></ion-input>
-        </ion-item> 
-        <ion-item>
-            <ion-label>Vía de Administración</ion-label>
-            <ion-select [(ngModel)]="cliente.medicamentos.viaMedicamento3">
-              <ion-option value="Inhalado">Inhalado</ion-option>
-              <ion-option value="Oftalmológico">Oftalmológico</ion-option>
-              <ion-option value="Inyectado">Inyectado</ion-option>
-              <ion-option value="Tópico">Tópico</ion-option>
-              <ion-option value="Nasal">Nasal</ion-option>
-              <ion-option value="Rectal">Rectal</ion-option>
-              <ion-option value="Oposito.">Oposito.</ion-option>
-              <ion-option value="Parche">Parche</ion-option>
-              <ion-option value="Otro">Otro</ion-option>
-            </ion-select>
-          </ion-item>
-        <!-- Foto Paciente -->
-        <ion-item>
-          <ion-thumbnail item-start>          
-            <img src="{{cliente.medicamentos.fotoMedicamento3}}">
-          </ion-thumbnail>
-          <h2>FOTO FORMULA</h2>
-          <button ion-button full (click)="uploadHandler3()">Tomar Foto</button>
-        </ion-item>             
-    </ion-list>
-
-    <ion-list>
-        <h1 text-center>Medicamento 4</h1>
-        <ion-item>
-            <ion-label floating>Nombre Medicamento</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.nombreMedicamento4"></ion-input>
-          </ion-item> 
-        <ion-item>
-              <ion-label floating>Dosis</ion-label>
-              <ion-input type="text" [(ngModel)]="cliente.medicamentos.dosisMedicamento4"></ion-input>
-        </ion-item>  
-        <ion-item>
-            <ion-label floating>Horario</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.horarioMedicamento4"></ion-input>
-        </ion-item> 
-        <ion-item>
-            <ion-label>Vía de Administración</ion-label>
-            <ion-select [(ngModel)]="cliente.medicamentos.viaMedicamento4">
-              <ion-option value="Inhalado">Inhalado</ion-option>
-              <ion-option value="Oftalmológico">Oftalmológico</ion-option>
-              <ion-option value="Inyectado">Inyectado</ion-option>
-              <ion-option value="Tópico">Tópico</ion-option>
-              <ion-option value="Nasal">Nasal</ion-option>
-              <ion-option value="Rectal">Rectal</ion-option>
-              <ion-option value="Oposito.">Oposito.</ion-option>
-              <ion-option value="Parche">Parche</ion-option>
-              <ion-option value="Otro">Otro</ion-option>
-            </ion-select>
-          </ion-item>
-        <!-- Foto Paciente -->
-        <ion-item>
-          <ion-thumbnail item-start>          
-            <img src="{{cliente.medicamentos.fotoMedicamento4}}">
-          </ion-thumbnail>
-          <h2>FOTO FORMULA</h2>
-          <button ion-button full (click)="uploadHandler4()">Tomar Foto</button>
-        </ion-item>             
-    </ion-list>
-    <button ion-button full (click)="guardarClienteVolverHome()">Guardar Paciente</button>
+  <button ion-button full (click)="guardarClienteVolverHome()">Guardar Paciente</button>
 </ion-content>

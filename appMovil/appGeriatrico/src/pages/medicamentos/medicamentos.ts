@@ -4,6 +4,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ClienteService } from './../../services/clientes.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TimeoutDebouncer } from 'ionic-angular/umd/util/debouncer';
 
 /**
  * Generated class for the MedicamentosPage page.
@@ -18,13 +19,31 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'medicamentos.html',
 })
 export class MedicamentosPage {
-  cliente: any = {}
+  cliente: any = {};
+  medicamentos: any = []; // MEDICAMENTOS
   ref: AngularFireStorageReference;    
   downloadURL: Observable<string>;
   image: string; // base64
   constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private storage: AngularFireStorage,      
     public crearClienteServices: ClienteService) {
     this.cliente = navParams.get('cliente');
+  }
+
+  boolContador: boolean = true;
+  contadorMedicamentos: number = 0;
+  agregarMedicamento() {
+    console.log("agregado")
+    this.copyArray();  
+    this.boolContador = false;
+    this.contadorMedicamentos++;
+    var nuevoMedicamento: any = {};
+    nuevoMedicamento.contador = this.contadorMedicamentos;
+    this.medicamentos.push(nuevoMedicamento);        
+  }
+
+  copyArray() {    
+    for (var i = 0; i < this.medicamentos.length; ++i)
+    this.cliente.medicamentos[i] = this.medicamentos[i];    
   }
 
   async takePhoto() {
@@ -39,7 +58,7 @@ export class MedicamentosPage {
     return await this.camera.getPicture(options)
   }
 
-  createUploadTask(file: string, path: string) {
+  createUploadTask(file: string, path: string, i: number) {
     const filePath = `${path}`;
     this.ref = this.storage.ref(filePath);
     this.image = 'data:image/jpg;base64,' + file;
@@ -47,16 +66,16 @@ export class MedicamentosPage {
     this.ref.putString(this.image, 'data_url').then(() => {      
       this.ref.getDownloadURL().subscribe(url => {                
         this.downloadURL = url;
-        this.cliente.medicamentos.fotoMedicamento1 = this.downloadURL;
+        this.cliente.medicamentos[i].fotoMedicamento = this.downloadURL;
         alert("Foto cargada con éxito en la base de datos")        
       })
     }); 
   }  
 
-  async uploadHandler() {
+  async uploadHandler(i: number) {
    const base64 = await this.takePhoto();
-   const pathFotoUsuario: string = `usuarios/${this.cliente.id}/medicamentos/fotoMedicamento1.jpg`;
-   this.createUploadTask(base64, pathFotoUsuario);      
+   const pathFotoUsuario: string = `usuarios/${this.cliente.id}/medicamentos/fotoMedicamento.jpg`;
+   this.createUploadTask(base64, pathFotoUsuario, i);      
   }
   createUploadTask2(file: string, path: string) {
     const filePath = `${path}`;
@@ -121,7 +140,8 @@ export class MedicamentosPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad MedicamentosPage');
   }
-  guardarClienteVolverHome() {   
+  guardarClienteVolverHome() { 
+    this.copyArray();      
     if(!this.cliente.id) {
       this.cliente.id = Date.now();        
     }        

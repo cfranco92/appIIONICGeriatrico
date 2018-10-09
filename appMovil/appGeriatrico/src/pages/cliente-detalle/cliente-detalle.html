@@ -15,472 +15,479 @@
 
 <ion-content padding>
 
-<ion-list>
-    <h1 text-center>{{cliente.nombre1}}</h1>      
-    <img src="{{cliente.foto}}"/>  
-      <!-- Nombre 1 -->
-      <ion-item>
-        <ion-label floating>Nombre 1</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.nombre1"></ion-input>
-      </ion-item>
-      <!-- Nombre 2 -->
-      <ion-item>
-        <ion-label floating>Nombre 2</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.nombre2"></ion-input>
-      </ion-item>
-      <!-- Apellido 1 -->
-      <ion-item>
-          <ion-label floating>Apellido 1</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.apellido1"></ion-input>
-      </ion-item>
-      <!-- Apellido 2 -->
-      <ion-item>
-        <ion-label floating>Apellido 2</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.apellido2"></ion-input>
-      </ion-item>           
-      <!-- Estado civil -->
-      <ion-item>
-        <ion-label>Estado Civil</ion-label>
-        <ion-select [(ngModel)]="cliente.estadoCivil">
-          <ion-option value="Soltero/a.">Soltero/a</ion-option>          
-          <ion-option value="Casado/a">Casado/a</ion-option>
-          <ion-option value="Divorciado/a">Divorciado/a</ion-option>
-          <ion-option value="Viudo/a">Viudo/a</ion-option>
-        </ion-select>
-      </ion-item>
-      <!-- Genero -->
-      <ion-item>
-        <ion-label>Género</ion-label>
-        <ion-select [(ngModel)]="cliente.genero">
-          <ion-option value="Masculino">Masculino</ion-option>          
-          <ion-option value="Femenino">Femenino</ion-option>          
-        </ion-select>
-      </ion-item>
-    </ion-list>
-    <ion-list>
-      <h2 text-center>Identificación y Edad</h2>
-      <!-- Tipo de documento       -->      
-      <ion-item>
-        <ion-label>Tipo de Documento</ion-label>
-        <ion-select [(ngModel)]="cliente.tipoDocumentoIdentidad">
-          <ion-option value="C.C.">C.C.</ion-option>
-          <ion-option value="Pasaporte">Pasaporte</ion-option>
-          <ion-option value="Ced.Ext.">Ced.Ext.</ion-option>
-          <ion-option value="No documento">No documento</ion-option>
-        </ion-select>
-      </ion-item>
-      <!-- Documento de identidad -->
-      <ion-item>
-        <ion-label floating>Documento Identidad</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.documentoIdentidad"></ion-input>
-      </ion-item>
-      <!-- Foto documento de identidad -->
-      <ion-item>
-        <ion-thumbnail item-start>
-          <!-- <img src="img/thumbnail-puppy-1.jpg"> -->
-          <img src="{{cliente.fotoDocumentoIdentidad}}">
-        </ion-thumbnail>
-        <h2>FOTO DOCUMENTO DE IDENTIDAD</h2>        
-      </ion-item>
-      <!-- Fecha de nacimiento -->
-      <ion-item>
-        <ion-label>Fecha Nacimiento</ion-label>
-        <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="cliente.fechaNacimiento"></ion-datetime>
-      </ion-item> 
-      <!-- Edad calculada  -->
-      <ion-item>
-          <ion-label floating>Edad</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.edad"></ion-input>
-        </ion-item>
-    </ion-list>
+  <ion-list>
+    <h1 text-center>{{cliente.nombre1}}</h1>
+    <img src="{{cliente.foto}}" />
+    <!-- Nombre 1 -->
+    <ion-item>
+      <ion-label floating>Nombre 1</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.nombre1"></ion-input>
+    </ion-item>
+    <!-- Nombre 2 -->
+    <ion-item>
+      <ion-label floating>Nombre 2</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.nombre2"></ion-input>
+    </ion-item>
+    <!-- Apellido 1 -->
+    <ion-item>
+      <ion-label floating>Apellido 1</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.apellido1"></ion-input>
+    </ion-item>
+    <!-- Apellido 2 -->
+    <ion-item>
+      <ion-label floating>Apellido 2</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.apellido2"></ion-input>
+    </ion-item>
+    <!-- Estado civil -->
+    <ion-item>
+      <ion-label>Estado Civil</ion-label>
+      <ion-select [(ngModel)]="cliente.estadoCivil">
+        <ion-option value="Soltero/a.">Soltero/a</ion-option>
+        <ion-option value="Casado/a">Casado/a</ion-option>
+        <ion-option value="Divorciado/a">Divorciado/a</ion-option>
+        <ion-option value="Viudo/a">Viudo/a</ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- Genero -->
+    <ion-item>
+      <ion-label>Género</ion-label>
+      <ion-select [(ngModel)]="cliente.genero">
+        <ion-option value="Masculino">Masculino</ion-option>
+        <ion-option value="Femenino">Femenino</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <h2 text-center>Identificación y Edad</h2>
+    <!-- Tipo de documento       -->
+    <ion-item>
+      <ion-label>Tipo de Documento</ion-label>
+      <ion-select [(ngModel)]="cliente.tipoDocumentoIdentidad">
+        <ion-option value="C.C.">C.C.</ion-option>
+        <ion-option value="Pasaporte">Pasaporte</ion-option>
+        <ion-option value="Ced.Ext.">Ced.Ext.</ion-option>
+        <ion-option value="No documento">No documento</ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- Documento de identidad -->
+    <ion-item>
+      <ion-label floating>Documento Identidad</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.documentoIdentidad"></ion-input>
+    </ion-item>
+    <!-- Foto documento de identidad -->
+    <ion-item>
+      <ion-thumbnail item-start>
+        <!-- <img src="img/thumbnail-puppy-1.jpg"> -->
+        <img src="{{cliente.fotoDocumentoIdentidad}}">
+      </ion-thumbnail>
+      <h2>FOTO DOCUMENTO DE IDENTIDAD</h2>
+    </ion-item>
+    <!-- Fecha de nacimiento -->
+    <ion-item>
+      <ion-label>Fecha Nacimiento</ion-label>
+      <ion-datetime displayFormat="DD MMM YYYY" [(ngModel)]="cliente.fechaNacimiento"></ion-datetime>
+    </ion-item>
+    <!-- Edad calculada  -->
+    <ion-item>
+      <ion-label floating>Edad</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.edad"></ion-input>
+    </ion-item>
+  </ion-list>
 
 
 
-    <ion-list>    
-      <h1 text-center>Acudiente Principal</h1>
-      <!-- Nombre 1 acudiente       -->
+  <ion-list>
+    <h1 text-center>Acudiente Principal</h1>
+    <!-- Nombre 1 acudiente       -->
+    <ion-item>
+      <ion-label floating>Nombre 1 Acudiente</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.nombre1"></ion-input>
+    </ion-item>
+    <!-- Nombre 2 acudiente -->
+    <ion-item>
+      <ion-label floating>Nombre 2 Acudiente</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.nombre2"></ion-input>
+    </ion-item>
+    <!-- Apellido 1 -->
+    <ion-item>
+      <ion-label floating>Appelido 1 Acudiente</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.apellido1"></ion-input>
+    </ion-item>
+    <!-- Apellido 2 -->
+    <ion-item>
+      <ion-label floating>Appelido 2 Acudiente</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.apellido2"></ion-input>
+    </ion-item>
+    <!-- Cedula -->
+    <ion-item>
+      <ion-label floating>Cédula Acudiente</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.cedula"></ion-input>
+    </ion-item>
+    <!-- Parentesco -->
+    <ion-item>
+      <ion-label>Parentesco</ion-label>
+      <ion-select [(ngModel)]="cliente.acudientes.acudientePrincipal.parentesco">
+        <ion-option value="Amigo/a.">Amigo/a</ion-option>
+        <ion-option value="Hermano/a">Hermano/a</ion-option>
+        <ion-option value="Tio/a">Tio/a</ion-option>
+        <ion-option value="Abuelo/a">Abuelo/a</ion-option>
+        <ion-option value="Primo/a">Primo/a</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <h1 text-center>Acudiente Secundario</h1>
+    <!-- Nombre 1 acudiente       -->
+    <ion-item>
+      <ion-label floating>Nombre 1 Acudiente Secundario</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.nombre1"></ion-input>
+    </ion-item>
+    <!-- Nombre 2 acudiente -->
+    <ion-item>
+      <ion-label floating>Nombre 2 Acudiente Secundario</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.nombre2"></ion-input>
+    </ion-item>
+    <!-- Apellido 1 -->
+    <ion-item>
+      <ion-label floating>Appelido 1 Acudiente Secundario</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.apellido1"></ion-input>
+    </ion-item>
+    <!-- Apellido 2 -->
+    <ion-item>
+      <ion-label floating>Appelido 2 Acudiente Secundario</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.apellido2"></ion-input>
+    </ion-item>
+    <!-- Cedula -->
+    <ion-item>
+      <ion-label floating>Cédula Acudiente Secundario</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.cedula"></ion-input>
+    </ion-item>
+    <!-- Parentesco -->
+    <ion-item>
+      <ion-label>Parentesco</ion-label>
+      <ion-select [(ngModel)]="cliente.acudientes.acudienteSecundario.parentesco">
+        <ion-option value="Amigo/a.">Amigo/a</ion-option>
+        <ion-option value="Hermano/a">Hermano/a</ion-option>
+        <ion-option value="Tio/a">Tio/a</ion-option>
+        <ion-option value="Abuelo/a">Abuelo/a</ion-option>
+        <ion-option value="Primo/a">Primo/a</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <!-- Parientes -->
+  <ion-list>
+    <h1 text-center>Parientes</h1>
+    <ion-item-sliding *ngFor="let pariente of parientes; let i = index">
       <ion-item>
-        <ion-label floating>Nombre 1 Acudiente</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.nombre1"></ion-input>
+        <br>
+        <h1>Pariente {{i+1}}</h1>
       </ion-item>
-      <!-- Nombre 2 acudiente -->
-      <ion-item>
-          <ion-label floating>Nombre 2 Acudiente</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.nombre2"></ion-input>
-      </ion-item>
-      <!-- Apellido 1 -->
-      <ion-item>
-          <ion-label floating>Appelido 1 Acudiente</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.apellido1"></ion-input>
-      </ion-item>
-      <!-- Apellido 2 -->
-      <ion-item>
-          <ion-label floating>Appelido 2 Acudiente</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.apellido2"></ion-input>
-      </ion-item>      
-      <!-- Cedula -->
-      <ion-item>
-        <ion-label floating>Cédula Acudiente</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.acudientes.acudientePrincipal.cedula"></ion-input>
-      </ion-item>  
-      <!-- Parentesco -->
-      <ion-item>
-        <ion-label>Parentesco</ion-label>
-        <ion-select [(ngModel)]="cliente.acudientes.acudientePrincipal.parentesco">
-          <ion-option value="Amigo/a.">Amigo/a</ion-option>          
-          <ion-option value="Hermano/a">Hermano/a</ion-option>
-          <ion-option value="Tio/a">Tio/a</ion-option>
-          <ion-option value="Abuelo/a">Abuelo/a</ion-option>
-          <ion-option value="Primo/a">Primo/a</ion-option>
-        </ion-select>
-      </ion-item>    
-    </ion-list>
-    <ion-list>    
-      <h1 text-center>Acudiente Secundario</h1>
-      <!-- Nombre 1 acudiente       -->
-      <ion-item>
-        <ion-label floating>Nombre 1 Acudiente Secundario</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.nombre1"></ion-input>
-      </ion-item>
-      <!-- Nombre 2 acudiente -->
-      <ion-item>
-          <ion-label floating>Nombre 2 Acudiente Secundario</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.nombre2"></ion-input>
-      </ion-item>
-      <!-- Apellido 1 -->
-      <ion-item>
-          <ion-label floating>Appelido 1 Acudiente Secundario</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.apellido1"></ion-input>
-      </ion-item>
-      <!-- Apellido 2 -->
-      <ion-item>
-          <ion-label floating>Appelido 2 Acudiente Secundario</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.apellido2"></ion-input>
-      </ion-item>
-      <!-- Cedula -->
-      <ion-item>
-        <ion-label floating>Cédula Acudiente Secundario</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.acudientes.acudienteSecundario.cedula"></ion-input>
-      </ion-item>    
-      <!-- Parentesco -->
-      <ion-item>
-        <ion-label>Parentesco</ion-label>
-        <ion-select [(ngModel)]="cliente.acudientes.acudienteSecundario.parentesco">
-          <ion-option value="Amigo/a.">Amigo/a</ion-option>          
-          <ion-option value="Hermano/a">Hermano/a</ion-option>
-          <ion-option value="Tio/a">Tio/a</ion-option>
-          <ion-option value="Abuelo/a">Abuelo/a</ion-option>
-          <ion-option value="Primo/a">Primo/a</ion-option>
-        </ion-select>
-      </ion-item>  
-    </ion-list>
-    <!-- Parientes -->
-    <ion-list> 
-      <h1 text-center>Parientes</h1>         
       <!-- Nombre 1 -->
       <ion-item>
         <ion-label floating>Nombre 1 Pariente</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.nombre1"></ion-input>
+        <ion-input type="text" [(ngModel)]="pariente.nombre1"></ion-input>
       </ion-item>
       <!-- Nombre 2 -->
       <ion-item>
         <ion-label floating>Nombre 2 Pariente</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.nombre2"></ion-input>
+        <ion-input type="text" [(ngModel)]="pariente.nombre2"></ion-input>
       </ion-item>
       <!-- Apellido1 -->
       <ion-item>
-          <ion-label floating>Appelido 1 Pariente</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.apellido1"></ion-input>
+        <ion-label floating>Appelido 1 Pariente</ion-label>
+        <ion-input type="text" [(ngModel)]="pariente.apellido1"></ion-input>
       </ion-item>
       <!-- Cedula -->
       <ion-item>
         <ion-label floating>Cédula Pariente</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.cedula"></ion-input>
+        <ion-input type="text" [(ngModel)]="pariente.cedula"></ion-input>
       </ion-item>
       <!-- Tel 1 -->
       <ion-item>
         <ion-label floating>Teléfono 1</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.tel1"></ion-input>
+        <ion-input type="text" [(ngModel)]="pariente.tel1"></ion-input>
       </ion-item>
       <!-- Tel 2 -->
       <ion-item>
         <ion-label floating>Teléfono 2</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.tel2"></ion-input>
+        <ion-input type="text" [(ngModel)]="pariente.tel2"></ion-input>
       </ion-item>
       <!-- Email -->
       <ion-item>
         <ion-label floating>Email</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.parientes.pariente1.email"></ion-input>
+        <ion-input type="text" [(ngModel)]="pariente.email"></ion-input>
       </ion-item>
       <!-- Parentesco -->
       <ion-item>
         <ion-label>Parentesco</ion-label>
-        <ion-select [(ngModel)]="cliente.parientes.pariente1.parentesco">
-          <ion-option value="Amigo/a.">Amigo/a</ion-option>          
+        <ion-select [(ngModel)]="pariente.parentesco">
+          <ion-option value="Amigo/a.">Amigo/a</ion-option>
           <ion-option value="Hermano/a">Hermano/a</ion-option>
           <ion-option value="Tio/a">Tio/a</ion-option>
           <ion-option value="Abuelo/a">Abuelo/a</ion-option>
           <ion-option value="Primo/a">Primo/a</ion-option>
         </ion-select>
       </ion-item>
-    </ion-list>
+    </ion-item-sliding>
+
+  </ion-list>
 
 
-    <ion-list>        
+  <ion-list>
     <h1 text-center>Médico Tratante</h1>
     <!-- Nombre 1 -->
+    <ion-item>
+      <ion-label floating>Nombre 1 Médico</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.nombre1"></ion-input>
+    </ion-item>
+    <!-- Nombre 2 -->
+    <ion-item>
+      <ion-label floating>Nombre 2 Médico</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.nombre2"></ion-input>
+    </ion-item>
+    <!-- Apellido 1 -->
+    <ion-item>
+      <ion-label floating>Apellido 1</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.apellido1"></ion-input>
+    </ion-item>
+    <!-- Apellido 2 -->
+    <ion-item>
+      <ion-label floating>Apellido 2</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.apellido2"></ion-input>
+    </ion-item>
+    <!-- Especialidad -->
+    <ion-item>
+      <ion-label floating>Especialidad</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.especialidad"></ion-input>
+    </ion-item>
+    <!-- Tel 1 -->
+    <ion-item>
+      <ion-label floating>Teléfono 1</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.tel1"></ion-input>
+    </ion-item>
+    <!-- Tel 2 -->
+    <ion-item>
+      <ion-label floating>Teléfono 2</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.tel2"></ion-input>
+    </ion-item>
+    <!-- Email -->
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.email"></ion-input>
+    </ion-item>
+    <!-- Direccion consultorio -->
+    <ion-item>
+      <ion-label floating>Dirección Consultorio</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.direccionConsultorio"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <h1 text-center>Seguros</h1>
+    <!-- EPS -->
+    <ion-item>
+      <ion-label>EPS</ion-label>
+      <ion-select [(ngModel)]="cliente.seguros.eps">
+        <ion-option value="Nueva EPS">Nueva EPS</ion-option>
+        <ion-option value="Salud Total">Salud Total</ion-option>
+        <ion-option value="Coomeva">Coomeva</ion-option>
+        <ion-option value="Sura">Sura</ion-option>
+        <ion-option value="Aliansalud">Aliansalud</ion-option>
+        <ion-option value="Sanitas">Sanitas</ion-option>
+        <ion-option value="Compensar">Compensar</ion-option>
+        <ion-option value="SER. OCC DE SALUD SOS">Ser. Occ de Salud SOS</ion-option>
+        <ion-option value="Comfenalco Valle">Confenalco Valle</ion-option>
+        <ion-option value="Salud Vida">Salud Vida</ion-option>
+        <ion-option value="Cruz Blanca">Cruz Blanca</ion-option>
+        <ion-option value="Café Salud">Café Salud</ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- Prepagada -->
+    <ion-item>
+      <ion-label>Prepagada</ion-label>
+      <ion-select [(ngModel)]="cliente.seguros.prepagada">
+        <ion-option value="MedPlus">MedPlus</ion-option>
+        <ion-option value="MediSanitas">MediSanitas</ion-option>
+        <ion-option value="Coomeva">Coomeva</ion-option>
+        <ion-option value="Colmédica">Colmédica</ion-option>
+        <ion-option value="Sura">Sura</ion-option>
+        <ion-option value="Mapfre">Mapfre</ion-option>
+        <ion-option value="MedPlus">MedPlus</ion-option>
+        <ion-option value="Seguros Bolivar">Seguros Bolivar</ion-option>
+        <ion-option value="Liberty Seguros">Liberty Seguros</ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- Seguros funerarios -->
+    <ion-item>
+      <ion-label>Seguros Funerarios</ion-label>
+      <ion-select [(ngModel)]="cliente.seguros.funerarios">
+        <ion-option value="San Vicente">San Vicente</ion-option>
+        <ion-option value="San Roque">San Roque</ion-option>
+        <ion-option value="Campos de Paz">Campos de Paz</ion-option>
+        <ion-option value="La Esperanza">La Esperanza</ion-option>
+        <ion-option value="Cristo Rey">Cristo Rey</ion-option>
+        <ion-option value="Monte Sacro">Monte Sacro</ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- Telefono Funeraria -->
+    <ion-item>
+      <ion-label floating>Teléfono de Funeraria</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.seguros.funerariaTel"></ion-input>
+    </ion-item>
+    <!-- Asistencia medica -->
+    <ion-item>
+      <ion-label>Asistencia Médica</ion-label>
+      <ion-select [(ngModel)]="cliente.seguros.asistenciaMedica">
+        <ion-option value="EMI">EMI</ion-option>
+        <ion-option value="Emermédica">Emermédica</ion-option>
+      </ion-select>
+    </ion-item>
+    <!-- Foto Carnet Asistencia Medica-->
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="{{cliente.seguros.fotoCarnetAsistenciaMedica}}">
+      </ion-thumbnail>
+      <h2>FOTO CARNET</h2>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <h1 text-center>Restricciones</h1>
+    <ion-list>
       <ion-item>
-        <ion-label floating>Nombre 1 Médico</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.nombre1"></ion-input>
+        <ion-label>Visitas</ion-label>
+        <ion-select [(ngModel)]="cliente.observaciones.visitas">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
       </ion-item>
-      <!-- Nombre 2 -->
-      <ion-item>
-          <ion-label floating>Nombre 2 Médico</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.nombre2"></ion-input>
-      </ion-item>
-      <!-- Apellido 1 -->
-      <ion-item>
-          <ion-label floating>Apellido 1</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.apellido1"></ion-input>
-      </ion-item>
-      <!-- Apellido 2 -->
-      <ion-item>
-          <ion-label floating>Apellido 2</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.apellido2"></ion-input>
-      </ion-item>
-      <!-- Especialidad -->
-      <ion-item>
-        <ion-label floating>Especialidad</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.especialidad"></ion-input>
-      </ion-item>
-      <!-- Tel 1 -->
-      <ion-item>
-        <ion-label floating>Teléfono 1</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.tel1"></ion-input>
-      </ion-item>
-      <!-- Tel 2 -->
-      <ion-item>
-        <ion-label floating>Teléfono 2</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.tel2"></ion-input>
-      </ion-item>
-      <!-- Email -->
-      <ion-item>
-        <ion-label floating>Email</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.email"></ion-input>
-      </ion-item>
-      <!-- Direccion consultorio -->
-      <ion-item>
-        <ion-label floating>Dirección Consultorio</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.direccionConsultorio"></ion-input>
-      </ion-item>          
     </ion-list>
-    <ion-list>        
-        <h1 text-center>Seguros</h1>
-        <!-- EPS -->
-        <ion-item>
-          <ion-label>EPS</ion-label>
-          <ion-select [(ngModel)]="cliente.seguros.eps">
-              <ion-option value="Nueva EPS">Nueva EPS</ion-option>
-              <ion-option value="Salud Total">Salud Total</ion-option>
-              <ion-option value="Coomeva">Coomeva</ion-option>
-              <ion-option value="Sura">Sura</ion-option>
-              <ion-option value="Aliansalud">Aliansalud</ion-option>
-              <ion-option value="Sanitas">Sanitas</ion-option>
-              <ion-option value="Compensar">Compensar</ion-option>
-              <ion-option value="SER. OCC DE SALUD SOS">Ser. Occ de Salud SOS</ion-option>
-              <ion-option value="Comfenalco Valle">Confenalco Valle</ion-option>
-              <ion-option value="Salud Vida">Salud Vida</ion-option>
-              <ion-option value="Cruz Blanca">Cruz Blanca</ion-option>
-              <ion-option value="Café Salud">Café Salud</ion-option>
-            </ion-select>
-        </ion-item>
-        <!-- Prepagada -->
-        <ion-item>
-          <ion-label>Prepagada</ion-label>
-          <ion-select [(ngModel)]="cliente.seguros.prepagada">
-            <ion-option value="MedPlus">MedPlus</ion-option>
-            <ion-option value="MediSanitas">MediSanitas</ion-option>
-            <ion-option value="Coomeva">Coomeva</ion-option>
-            <ion-option value="Colmédica">Colmédica</ion-option>
-            <ion-option value="Sura">Sura</ion-option>
-            <ion-option value="Mapfre">Mapfre</ion-option>
-            <ion-option value="MedPlus">MedPlus</ion-option>
-            <ion-option value="Seguros Bolivar">Seguros Bolivar</ion-option>
-            <ion-option value="Liberty Seguros">Liberty Seguros</ion-option>
-          </ion-select>          
-        </ion-item>         
-        <!-- Seguros funerarios -->
-        <ion-item>
-          <ion-label>Seguros Funerarios</ion-label>
-          <ion-select [(ngModel)]="cliente.seguros.funerarios">
-            <ion-option value="San Vicente">San Vicente</ion-option>
-            <ion-option value="San Roque">San Roque</ion-option>
-            <ion-option value="Campos de Paz">Campos de Paz</ion-option>
-            <ion-option value="La Esperanza">La Esperanza</ion-option>
-            <ion-option value="Cristo Rey">Cristo Rey</ion-option>
-            <ion-option value="Monte Sacro">Monte Sacro</ion-option>
-          </ion-select>
-        </ion-item>
-        <!-- Telefono Funeraria -->
-        <ion-item>
-          <ion-label floating>Teléfono de Funeraria</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.seguros.funerariaTel"></ion-input>
-        </ion-item>
-        <!-- Asistencia medica -->
-        <ion-item>
-          <ion-label>Asistencia Médica</ion-label>
-          <ion-select [(ngModel)]="cliente.seguros.asistenciaMedica">
-            <ion-option value="EMI">EMI</ion-option>
-            <ion-option value="Emermédica">Emermédica</ion-option>
-          </ion-select>
-        </ion-item>
-        <!-- Foto Carnet Asistencia Medica-->
-        <ion-item>
-          <ion-thumbnail item-start>          
-            <img src="{{cliente.seguros.fotoCarnetAsistenciaMedica}}">
-          </ion-thumbnail>
-          <h2>FOTO CARNET</h2>          
-        </ion-item>                      
-        </ion-list>
-        <ion-list>
-          <h1 text-center>Restricciones</h1>                            
-          <ion-list>
-            <ion-item>
-              <ion-label>Visitas</ion-label>
-              <ion-select [(ngModel)]="cliente.observaciones.visitas">
-                <ion-option value="Si">Si</ion-option>
-                <ion-option value="No">No</ion-option>
-              </ion-select>
-            </ion-item>
-          </ion-list>
-          <ion-list>
-              <ion-item>
-                <ion-label>Salidas</ion-label>
-                <ion-select [(ngModel)]="cliente.observaciones.salidas">
-                  <ion-option value="Si">Si</ion-option>
-                  <ion-option value="No">No</ion-option>
-                </ion-select>
-              </ion-item>
-          </ion-list>                  
-        </ion-list>
+    <ion-list>
+      <ion-item>
+        <ion-label>Salidas</ion-label>
+        <ion-select [(ngModel)]="cliente.observaciones.salidas">
+          <ion-option value="Si">Si</ion-option>
+          <ion-option value="No">No</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </ion-list>
 
 
 
 
-        <ion-list>        
+  <ion-list>
     <h1 text-center>Psicológicos y/o Psiquiatricos</h1>
     <!-- Nombre y Apellidos Médico Tratante -->
-      <ion-item>
-        <ion-label floating>Nombre y Apellidos Médico Tratante</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.psicologicosPsiquiatricos.nombreApellidosMedico"></ion-input>
-      </ion-item>
-      <!-- Contacto del Médico -->
-      <ion-item>
-          <ion-label floating>Contacto Médico Tratante</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.psicologicosPsiquiatricos.contactoMedico"></ion-input>
-      </ion-item>
-      <!-- Diagnóstico -->
-      <ion-item>
-          <ion-label floating>Diagnóstico</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.psicologicosPsiquiatricos.diagnostico"></ion-input>
-      </ion-item>
-      <!-- Tratamiento -->
-      <ion-item>
-          <ion-label floating>Tratamiento</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.psicologicosPsiquiatricos.tratamiento"></ion-input>
-      </ion-item>      
+    <ion-item>
+      <ion-label floating>Nombre y Apellidos Médico Tratante</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.psicologicosPsiquiatricos.nombreApellidosMedico"></ion-input>
+    </ion-item>
+    <!-- Contacto del Médico -->
+    <ion-item>
+      <ion-label floating>Contacto Médico Tratante</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.psicologicosPsiquiatricos.contactoMedico"></ion-input>
+    </ion-item>
+    <!-- Diagnóstico -->
+    <ion-item>
+      <ion-label floating>Diagnóstico</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.psicologicosPsiquiatricos.diagnostico"></ion-input>
+    </ion-item>
+    <!-- Tratamiento -->
+    <ion-item>
+      <ion-label floating>Tratamiento</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.psicologicosPsiquiatricos.tratamiento"></ion-input>
+    </ion-item>
   </ion-list>
-  <ion-list>        
+  <ion-list>
     <h1 text-center>Cognitivos</h1>
     <!-- Cambios memoria -->
-      <ion-item>
-        <ion-label floating>Cambios Memoria</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.cognitivos.cambiosMemoria"></ion-input>
-      </ion-item>
-      <!-- Descripción -->
-      <ion-item>
-          <ion-label floating>Descripción</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.cognitivos.descripcion"></ion-input>
-      </ion-item>      
+    <ion-item>
+      <ion-label floating>Cambios Memoria</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.cognitivos.cambiosMemoria"></ion-input>
+    </ion-item>
+    <!-- Descripción -->
+    <ion-item>
+      <ion-label floating>Descripción</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.cognitivos.descripcion"></ion-input>
+    </ion-item>
   </ion-list>
-  <ion-list>        
+  <ion-list>
     <h1 text-center>Físicos</h1>
     <!-- Enfermedades -->
-      <ion-item>
-        <ion-label floating>Enfermedades</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.enfermedades"></ion-input>
-      </ion-item>
-      <!-- Crónicas SI/NO -->
-      <ion-item>
-          <ion-label floating>Crónicas SI/NO</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.fisicosCronicasSINO"></ion-input>
-      </ion-item>
-      <!-- Detalle -->
-      <ion-item>
-          <ion-label floating>Detalle</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.detalleCronicas"></ion-input>
-      </ion-item>
-      <!-- Tiempo-->
-      <ion-item>
-          <ion-label floating>Tiempo</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.tiempoCronicas"></ion-input>
-      </ion-item> 
-      <!-- EUCLU ??????????-->
-      <ion-item>
-          <ion-label floating>EUCLU</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.euclu"></ion-input>
-      </ion-item>  
-      <!-- Tratamiento-->
-      <ion-item>
-          <ion-label floating>Tratamiento</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.tratamientoCronicas"></ion-input>
-      </ion-item>     
+    <ion-item>
+      <ion-label floating>Enfermedades</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.enfermedades"></ion-input>
+    </ion-item>
+    <!-- Crónicas SI/NO -->
+    <ion-item>
+      <ion-label floating>Crónicas SI/NO</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.fisicosCronicasSINO"></ion-input>
+    </ion-item>
+    <!-- Detalle -->
+    <ion-item>
+      <ion-label floating>Detalle</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.detalleCronicas"></ion-input>
+    </ion-item>
+    <!-- Tiempo-->
+    <ion-item>
+      <ion-label floating>Tiempo</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.tiempoCronicas"></ion-input>
+    </ion-item>
+    <!-- EUCLU ??????????-->
+    <ion-item>
+      <ion-label floating>EUCLU</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.euclu"></ion-input>
+    </ion-item>
+    <!-- Tratamiento-->
+    <ion-item>
+      <ion-label floating>Tratamiento</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.fisicos.tratamientoCronicas"></ion-input>
+    </ion-item>
   </ion-list>
-  <ion-list>        
+  <ion-list>
     <h1 text-center>Alergias</h1>
     <!-- Enfermedades -->
-      <ion-item>
-        <ion-label floating>Médico tratante</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.alergias.medico"></ion-input>
-      </ion-item>
-      <!-- Crónicas SI/NO -->
-      <ion-item>
-          <ion-label floating>Otros</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.alergias.otros"></ion-input>
-      </ion-item>
-      <!-- Detalle -->
-      <ion-item>
-          <ion-label floating>Medicamentos</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.alergias.medicamentos"></ion-input>
-      </ion-item>      
+    <ion-item>
+      <ion-label floating>Médico tratante</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.alergias.medico"></ion-input>
+    </ion-item>
+    <!-- Crónicas SI/NO -->
+    <ion-item>
+      <ion-label floating>Otros</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.alergias.otros"></ion-input>
+    </ion-item>
+    <!-- Detalle -->
+    <ion-item>
+      <ion-label floating>Medicamentos</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.alergias.medicamentos"></ion-input>
+    </ion-item>
   </ion-list>
 
 
 
-  <ion-list>        
+  <ion-list>
     <h1 text-center>Enfermedades Familiares</h1>
     <!-- Enfermedad 1 -->
-      <ion-item>
-        <ion-label floating>Enfermedad 1</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.familiar.enfermedad1"></ion-input>
-      </ion-item>
-      <!-- Parentesco Enfermedad 1 -->
-      <ion-item>
-          <ion-label floating>Parentesco Enfermedad 1</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.familiar.parentescoEnfermedad1"></ion-input>
-      </ion-item>
-      <!-- Enfermedad 2 -->
-      <ion-item>
-          <ion-label floating>Enfermedad 2</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.familiar.enfermedad2"></ion-input>
-      </ion-item>
-      <!-- Parentesco Enfermedad 2-->
-      <ion-item>
-          <ion-label floating>Parentesco Enfermedad 2</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.familiar.parentescoEnfermedad2"></ion-input>
-      </ion-item>       
+    <ion-item>
+      <ion-label floating>Enfermedad 1</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.familiar.enfermedad1"></ion-input>
+    </ion-item>
+    <!-- Parentesco Enfermedad 1 -->
+    <ion-item>
+      <ion-label floating>Parentesco Enfermedad 1</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.familiar.parentescoEnfermedad1"></ion-input>
+    </ion-item>
+    <!-- Enfermedad 2 -->
+    <ion-item>
+      <ion-label floating>Enfermedad 2</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.familiar.enfermedad2"></ion-input>
+    </ion-item>
+    <!-- Parentesco Enfermedad 2-->
+    <ion-item>
+      <ion-label floating>Parentesco Enfermedad 2</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.familiar.parentescoEnfermedad2"></ion-input>
+    </ion-item>
   </ion-list>
-  <ion-list>        
+  <ion-list>
     <h1 text-center>Perdidads Familiares</h1>
     <ion-item>
       <ion-label>Recientes</ion-label>
@@ -492,190 +499,73 @@
       </ion-select>
     </ion-item>
   </ion-list>
-  <ion-list>        
+  <ion-list>
     <h1 text-center>Traumas Emocionales</h1>
     <ion-item>
-        <ion-label>Seleccione</ion-label>
-        <ion-select [(ngModel)]="cliente.medico.antecedentes.traumas.suceso">
-          <ion-option value="Secuestro">Secuestro</ion-option>
-          <ion-option value="Ausencia Hijos">Ausencia Hijos</ion-option>          
-        </ion-select>
-      </ion-item>
+      <ion-label>Seleccione</ion-label>
+      <ion-select [(ngModel)]="cliente.medico.antecedentes.traumas.suceso">
+        <ion-option value="Secuestro">Secuestro</ion-option>
+        <ion-option value="Ausencia Hijos">Ausencia Hijos</ion-option>
+      </ion-select>
+    </ion-item>
     <!-- Enfermedad 1 -->
-      <ion-item>
-        <ion-label floating>Quién</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.traumas.quienTrauma"></ion-input>
-      </ion-item>
-      <!-- Parentesco Enfermedad 1 -->
-      <ion-item>
-          <ion-label floating>Tiempo</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.traumas.tiempoTrauma"></ion-input>
-      </ion-item>   
-      <ion-item>
-        <ion-label floating>Otros</ion-label>
-        <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.traumas.otrosTrauma"></ion-input>
-    </ion-item>           
+    <ion-item>
+      <ion-label floating>Quién</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.traumas.quienTrauma"></ion-input>
+    </ion-item>
+    <!-- Parentesco Enfermedad 1 -->
+    <ion-item>
+      <ion-label floating>Tiempo</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.traumas.tiempoTrauma"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Otros</ion-label>
+      <ion-input type="text" [(ngModel)]="cliente.medico.antecedentes.traumas.otrosTrauma"></ion-input>
+    </ion-item>
   </ion-list>
 
 
   <ion-list>
-      <h1 text-center>{{cliente.nombre1}}</h1>
+    <h1 text-center>Medicamentos</h1>
+    <ion-item-sliding *ngFor="let medicamento of medicamentos; let i = index">
       <ion-item>
-          <ion-label floating>Cédula</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.documentoIdentidad"></ion-input>
-        </ion-item>
+        <h1>Medicamento {{i+1}}</h1>
+      </ion-item>
       <ion-item>
-          <ion-label floating>Medico Tratante</ion-label>
-          <ion-input type="text" [(ngModel)]="cliente.medicamentos.medicoTratante"></ion-input>
-      </ion-item>                    
-    </ion-list>
+        <ion-label floating>Nombre Medicamento</ion-label>
+        <ion-input type="text" [(ngModel)]="medicamento.nombreMedicamento"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Dosis</ion-label>
+        <ion-input type="text" [(ngModel)]="medicamento.dosisMedicamento"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Horario</ion-label>
+        <ion-input type="text" [(ngModel)]="medicamento.horarioMedicamento"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Vía de Administración</ion-label>
+        <ion-select [(ngModel)]="medicamento.viaMedicamento">
+          <ion-option value="Inhalado">Inhalado</ion-option>
+          <ion-option value="Oftalmológico">Oftalmológico</ion-option>
+          <ion-option value="Inyectado">Inyectado</ion-option>
+          <ion-option value="Tópico">Tópico</ion-option>
+          <ion-option value="Nasal">Nasal</ion-option>
+          <ion-option value="Rectal">Rectal</ion-option>
+          <ion-option value="Oposito.">Oposito.</ion-option>
+          <ion-option value="Parche">Parche</ion-option>
+          <ion-option value="Otro">Otro</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="{{medicamento.fotoMedicamento}}">
+        </ion-thumbnail>
+        <h2>FOTO FORMULA</h2>
+      </ion-item>
 
-    <ion-list>
-        <h1 text-center>Medicamento 1</h1>
-        <ion-item>
-            <ion-label floating>Nombre Medicamento</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.nombreMedicamento1"></ion-input>
-          </ion-item> 
-        <ion-item>
-              <ion-label floating>Dosis</ion-label>
-              <ion-input type="text" [(ngModel)]="cliente.medicamentos.dosisMedicamento1"></ion-input>
-        </ion-item>  
-        <ion-item>
-            <ion-label floating>Horario</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.horarioMedicamento1"></ion-input>
-        </ion-item> 
-        <ion-item>
-            <ion-label>Vía de Administración</ion-label>
-            <ion-select [(ngModel)]="cliente.medicamentos.viaMedicamento1">
-              <ion-option value="Inhalado">Inhalado</ion-option>
-              <ion-option value="Oftalmológico">Oftalmológico</ion-option>
-              <ion-option value="Inyectado">Inyectado</ion-option>
-              <ion-option value="Tópico">Tópico</ion-option>
-              <ion-option value="Nasal">Nasal</ion-option>
-              <ion-option value="Rectal">Rectal</ion-option>
-              <ion-option value="Oposito.">Oposito.</ion-option>
-              <ion-option value="Parche">Parche</ion-option>
-              <ion-option value="Otro">Otro</ion-option>
-            </ion-select>
-          </ion-item>
-        <!-- Foto Paciente -->
-        <ion-item>
-          <ion-thumbnail item-start>          
-            <img src="{{cliente.medicamentos.fotoMedicamento1}}">
-          </ion-thumbnail>
-          <h2>FOTO FORMULA</h2>          
-        </ion-item>             
-    </ion-list>
-
-    <ion-list>
-        <h1 text-center>Medicamento 2</h1>
-        <ion-item>
-            <ion-label floating>Nombre Medicamento</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.nombreMedicamento2"></ion-input>
-          </ion-item> 
-        <ion-item>
-              <ion-label floating>Dosis</ion-label>
-              <ion-input type="text" [(ngModel)]="cliente.medicamentos.dosisMedicamento2"></ion-input>
-        </ion-item>  
-        <ion-item>
-            <ion-label floating>Horario</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.horarioMedicamento2"></ion-input>
-        </ion-item> 
-        <ion-item>
-            <ion-label>Vía de Administración</ion-label>
-            <ion-select [(ngModel)]="cliente.medicamentos.viaMedicamento2">
-              <ion-option value="Inhalado">Inhalado</ion-option>
-              <ion-option value="Oftalmológico">Oftalmológico</ion-option>
-              <ion-option value="Inyectado">Inyectado</ion-option>
-              <ion-option value="Tópico">Tópico</ion-option>
-              <ion-option value="Nasal">Nasal</ion-option>
-              <ion-option value="Rectal">Rectal</ion-option>
-              <ion-option value="Oposito.">Oposito.</ion-option>
-              <ion-option value="Parche">Parche</ion-option>
-              <ion-option value="Otro">Otro</ion-option>
-            </ion-select>
-          </ion-item>
-        <!-- Foto Paciente -->
-        <ion-item>
-          <ion-thumbnail item-start>          
-            <img src="{{cliente.medicamentos.fotoMedicamento2}}">
-          </ion-thumbnail>
-          <h2>FOTO FORMULA</h2>          
-        </ion-item>             
-    </ion-list>
-
-    <ion-list>
-        <h1 text-center>Medicamento 3</h1>
-        <ion-item>
-            <ion-label floating>Nombre Medicamento</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.nombreMedicamento3"></ion-input>
-          </ion-item> 
-        <ion-item>
-              <ion-label floating>Dosis</ion-label>
-              <ion-input type="text" [(ngModel)]="cliente.medicamentos.dosisMedicamento3"></ion-input>
-        </ion-item>  
-        <ion-item>
-            <ion-label floating>Horario</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.horarioMedicamento3"></ion-input>
-        </ion-item> 
-        <ion-item>
-            <ion-label>Vía de Administración</ion-label>
-            <ion-select [(ngModel)]="cliente.medicamentos.viaMedicamento3">
-              <ion-option value="Inhalado">Inhalado</ion-option>
-              <ion-option value="Oftalmológico">Oftalmológico</ion-option>
-              <ion-option value="Inyectado">Inyectado</ion-option>
-              <ion-option value="Tópico">Tópico</ion-option>
-              <ion-option value="Nasal">Nasal</ion-option>
-              <ion-option value="Rectal">Rectal</ion-option>
-              <ion-option value="Oposito.">Oposito.</ion-option>
-              <ion-option value="Parche">Parche</ion-option>
-              <ion-option value="Otro">Otro</ion-option>
-            </ion-select>
-          </ion-item>
-        <!-- Foto Paciente -->
-        <ion-item>
-          <ion-thumbnail item-start>          
-            <img src="{{cliente.medicamentos.fotoMedicamento3}}">
-          </ion-thumbnail>
-          <h2>FOTO FORMULA</h2>          
-        </ion-item>             
-    </ion-list>
-
-    <ion-list>
-        <h1 text-center>Medicamento 4</h1>
-        <ion-item>
-            <ion-label floating>Nombre Medicamento</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.nombreMedicamento4"></ion-input>
-          </ion-item> 
-        <ion-item>
-              <ion-label floating>Dosis</ion-label>
-              <ion-input type="text" [(ngModel)]="cliente.medicamentos.dosisMedicamento4"></ion-input>
-        </ion-item>  
-        <ion-item>
-            <ion-label floating>Horario</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.medicamentos.horarioMedicamento4"></ion-input>
-        </ion-item> 
-        <ion-item>
-            <ion-label>Vía de Administración</ion-label>
-            <ion-select [(ngModel)]="cliente.medicamentos.viaMedicamento4">
-              <ion-option value="Inhalado">Inhalado</ion-option>
-              <ion-option value="Oftalmológico">Oftalmológico</ion-option>
-              <ion-option value="Inyectado">Inyectado</ion-option>
-              <ion-option value="Tópico">Tópico</ion-option>
-              <ion-option value="Nasal">Nasal</ion-option>
-              <ion-option value="Rectal">Rectal</ion-option>
-              <ion-option value="Oposito.">Oposito.</ion-option>
-              <ion-option value="Parche">Parche</ion-option>
-              <ion-option value="Otro">Otro</ion-option>
-            </ion-select>
-          </ion-item>
-        <!-- Foto Paciente -->
-        <ion-item>
-          <ion-thumbnail item-start>          
-            <img src="{{cliente.medicamentos.fotoMedicamento4}}">
-          </ion-thumbnail>
-          <h2>FOTO FORMULA</h2>          
-        </ion-item>             
-    </ion-list>
-    <button ion-button full (click)="guardarCambios()">Guardar Cambios</button>
+      <hr>
+    </ion-item-sliding>
+  </ion-list>
+  <button ion-button full (click)="guardarCambios()">Guardar Cambios</button>
 </ion-content>
