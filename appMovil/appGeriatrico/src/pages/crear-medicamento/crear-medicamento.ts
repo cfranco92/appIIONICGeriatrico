@@ -19,7 +19,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CrearMedicamentoPage {
   medicamento: any = {
-    nombre: " ",
+    nombreGenerico: " ",
+    nombreComercial: " ",
     foto: " ",
     presentacion: " ",
     concentracion: " ",

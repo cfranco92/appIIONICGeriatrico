@@ -24,11 +24,16 @@
         <h2>FOTO MEDICAMENTO</h2>
         <button ion-button full (click)="uploadHandler()">Tomar Foto</button>
       </ion-item>
-      <!-- Nombre Medicamento -->
+      <!-- Nombre Comercial Medicamento -->
+      <ion-item>
+        <ion-label floating>Nombre Comercial</ion-label>
+        <ion-input type="text" [(ngModel)]="medicamento.nombreComercial"></ion-input>
+      </ion-item>
+      <!-- Nombre Genérico Medicamento -->
       <ion-item>
         <ion-label floating>Nombre Genérico - Comercial</ion-label>
-        <ion-input type="text" [(ngModel)]="medicamento.nombre"></ion-input>
-      </ion-item>
+        <ion-input type="text" [(ngModel)]="medicamento.nombreGenerico"></ion-input>
+      </ion-item>      
       <!-- Presentacion -->
       <ion-item>
         <ion-label>Presentación</ion-label>

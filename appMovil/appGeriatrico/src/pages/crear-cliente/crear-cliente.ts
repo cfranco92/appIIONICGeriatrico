@@ -49,7 +49,15 @@ export class CrearClientePage {
     fotoDocumentoIdentidad : " ",
     genero : " ",
     // id : "",
-    medicamentos : {},
+    medicamentos : {
+      0: {
+        nombreMedicamento: " ",
+        dosisMedicamento: " ",
+        horarioMedicamento: " ",
+        viaMedicamento: " ",
+        fotoMedicamento: " ",        
+      }
+    },
     medico : {
       antecedentes : {
         alergias : {
@@ -107,7 +115,19 @@ export class CrearClientePage {
       salidasObservaciones : " ",
       visitasObservaciones : " "
     },
-    parientes : {},
+    parientes : {
+      0: {
+        contador: " ",
+        nombre1: " ",
+        nombre2: " ",
+        apellido1: " ",
+        cedula: " ",
+        tel1: " ",
+        tel2: " ",
+        email: " ",
+        parentesco: " ",
+      }
+    },
     seguros : {
       asistenciaMedica : " ",
       eps : " ",
